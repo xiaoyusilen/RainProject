@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Load JQuery -->
-<script type="text/javascript" src="js/jquery-latest.min.js"></script>
-<!-- Load jquery.cookie plugin (optional) -->
-<script type="text/javascript" src="js/jquery.cookie.js"></script>
-<!-- Load jquery.navgoco plugin js and css files -->
-<script type="text/javascript" src="js/jquery.navgoco.js"></script>
-<link rel="stylesheet" href="css/jquery.navgoco.css" type="text/css" media="screen" />
-<title>Insert title here</title>
+    <!-- Load JQuery -->
+    <script type="text/javascript" src="js/jquery-latest.min.js"></script>
+    <!-- Load jquery.cookie plugin (optional) -->
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <!-- Load jquery.navgoco plugin js and css files -->
+    <script type="text/javascript" src="js/jquery.navgoco.js"></script>
+    <link rel="stylesheet" href="css/jquery.navgoco.css" type="text/css" media="screen" />
 </head>
 <body>
 <ul class="nav">
