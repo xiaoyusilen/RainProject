@@ -5,11 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>空港经济区排水管网水质数据管理系统 </title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery.js" language="javascript" type="text/javascript"></script>
-<script language="javascript" type="text/javascript" src="js/public.js"></script>
+<style type="text/css">
+body{
+	background:#333;
+	text-align:center;
+	font-size:32px;
+	color:#fff;
+	margin:1.5% 30% 30% 30%;
+	font-style:"微软雅黑";
+}
+</style>
 </head>
-<body class="keBody">
-<h1 class="keTitle">空港经济区排水管网水质数据管理系统   V1.3</h1>
-<div class="kePublic">
+<body>
+空港经济区排水管网水质数据管理系统   V1.3
+</body>
 </html>

@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+.container-fluid{padding-right:20px;padding-left:20px;*zoom:1;}.container-fluid:before,.container-fluid:after{display:table;content:"";line-height:0;}
+.row-fluid table td[class*="span"]
+span12,.table th.span12{float:none;width:924px;margin-left:0;}
+.form-horizontal{display:inline-block;*display:inline;*zoom:1;margin-bottom:0;vertical-align:middle;}
+.control-group{margin-bottom:10px;}
+.control-label{float:left;width:160px;padding-top:5px;text-align:right;}
+.controls{*display:inline-block;*padding-left:20px;margin-left:180px;*margin-left:0;}
