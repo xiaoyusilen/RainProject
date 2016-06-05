@@ -21,7 +21,7 @@ public class LineDaoimpl {
 		// TODO Auto-generated method stub
 		List<line> listLine = new ArrayList<line>();
 		
-		String strSQL = "select * from april";
+		String strSQL = "select pno,ppv,pnv,pcod from record";
 		
 		ResultSet rs = sqlManager.execQuery(connection, strSQL, new Object[] {});
 		
