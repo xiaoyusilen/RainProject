@@ -7,5 +7,5 @@ import com.rain.entity.Position;
 
 public interface PositionDao {
 	public List<Position> selectAll();
-
+	public List<Position> query(int year,int month,String type,String way,Double view);
 }

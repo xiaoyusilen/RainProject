@@ -86,6 +86,13 @@ public class Position {
 		this.px = px;
 		this.py = py;
 	}
+	public Position(int pno, Double ppv,Double pnv,Double pcod) {
+		super();
+		this.pno = pno;
+		this.ppv =  ppv;
+		this.pnv = pnv;
+		this.pcod = pcod;
+	}
 	
 	public Position() {
 		super();

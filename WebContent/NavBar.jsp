@@ -98,6 +98,10 @@
             <li><a href="#">总磷含量折线图</a></li>
         </ul>
     </li>
+    <li><a href="image2.jsp" target="mainFrame">地表水及泵站监测点</a>
+    </li>
+    <li><a href="shuixi.jsp" target="mainFrame">分水系</a>
+    </li>
 </ul>
 
 <script type="text/javascript">

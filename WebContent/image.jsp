@@ -17,9 +17,8 @@
 </head>
 <body> 
 <span id="lbresult"> 
-<img src="images/1.jpg" width="1191.6" height="817.2" usemap="#Map" border="0" />
-
-<!--<img src="images/1.jpg" width="71%" height="71%" usemap="#Map" border="0" />-->
+<!-- <img src="images/1.jpg" width="1191.6" height="817.2" usemap="#Map" border="0" /> -->
+<img src="images/1.jpg" width="728.2" height="499.4" usemap="#Map" border="0" />
 <!-- 建立图片热点信息,coords的参数为坐标x、y以及选取半径 -->
   <map name="Map" id="Map">
   	<c:forEach items="${sessionScope.listPosition }" var="position">
@@ -43,7 +42,7 @@
    			综合污染指数  ${position.pcom }<br/>
    			</li>
    			<li>
-   			<div class="m2map_t2"><strong class="fl cor_blue"><a href="line.jsp" target="_self"><u>>>分析图<<</u></a></strong></div>
+   			<div class="m2map_t2"><strong class="fl cor_blue"><a href="line2.jsp" target="_self"><u>>>分析图<<</u></a></strong></div>
    			</li>
  			</ul>
  		</div>

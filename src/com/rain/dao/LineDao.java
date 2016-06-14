@@ -6,6 +6,6 @@ import com.rain.entity.line;
 
 public interface LineDao {
 	
-	public List<line> selectAll();
+	public List<line> selectAll(int pno);
 	
 }
