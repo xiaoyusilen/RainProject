@@ -11,6 +11,7 @@ import com.rain.DateSource.ConnectionManager;
 import com.rain.DateSource.SQLManager;
 import com.rain.dao.PositionDao;
 import com.rain.entity.Position;
+import com.rain.entity.Time;
 
 public class PositionDaoimpl implements PositionDao {
 
@@ -18,13 +19,36 @@ public class PositionDaoimpl implements PositionDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
-	public List<Position> selectAll() {
+	public Time querytime(){
+		
+		
+		String strSQL = "select max(month),year from record where year in (select max(year) from record)";
+		
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, new Object[] {});
+		
+		try {
+			Time time = new Time();
+			while(rs.next()){
+				time.setMonth(rs.getString(1));
+				time.setYear(rs.getString(2));
+			}
+			return time;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public List<Position> selectAll(int month,int year) {
 		// TODO Auto-generated method stub
 		List<Position> listPosition = new ArrayList<Position>();
 		
-		String strSQL = "select record.pno,ppv,pnv,pcod,pcom,pname,pinfo,px/0.09*0.055,py/0.09*0.055,pcss1,pcss2 from record,position where record.pno=position.pno group by position.pno";
+		String strSQL = "select record.pno,ppv,pnv,pcod,pcom,pname,pinfo,px/0.09*0.055,py/0.09*0.055,pcss1,pcss2,month,year from record,position where record.pno=position.pno and year=? and month=? group by position.pno";
 		
-		ResultSet rs = sqlManager.execQuery(connection, strSQL, new Object[] {});
+		Object[] params = {year,month};
+		
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
 		
 		try {
 			while(rs.next())
@@ -41,6 +65,8 @@ public class PositionDaoimpl implements PositionDao {
 				position.setPy(rs.getDouble(9));
 				position.setPcss1(rs.getString(10));
 				position.setPcss2(rs.getString(11));
+				position.setMonth(rs.getString(12));
+				position.setYear(rs.getString(13));
 				
 				listPosition.add(position);
 			}

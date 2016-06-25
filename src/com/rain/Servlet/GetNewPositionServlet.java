@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,17 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.rain.dao.PositionDao;
 import com.rain.dao.impl.PositionDaoimpl;
 import com.rain.entity.Position;
+import com.rain.entity.Time;
 
 /**
- * Servlet implementation class GetPositionServlet
+ * Servlet implementation class GetNewPositionServlet
  */
-public class GetPositionServlet extends HttpServlet {
+@WebServlet("/GetNewPositionServlet")
+public class GetNewPositionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetPositionServlet() {
+    public GetNewPositionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,15 +35,15 @@ public class GetPositionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		@SuppressWarnings("unused")
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
-		String y = request.getParameter("year");
-		int year = Integer.valueOf(y);
-		String m = request.getParameter("month");
-		int month = Integer.valueOf(m);
 		PositionDao positiondao = new PositionDaoimpl();
+		Time time = positiondao.querytime();
+		int year = Integer.valueOf(time.getYear());
+		int month = Integer.valueOf(time.getMonth());
+		System.out.println(year);
+		System.out.println(month);
 		List<Position> listPosition = positiondao.selectAll(month,year);
-
 		if (listPosition != null) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			response.sendRedirect("image.jsp");

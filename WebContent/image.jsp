@@ -35,7 +35,7 @@
    			<div class="m2map_t2"><strong class="fl cor_blue">${position.pinfo }</div>
    			</li>
    			<li>
-   			<div class="m2map_t2"><strong class="fl cor_blue">2016年4月数据信息</div>		
+   			<div class="m2map_t2"><strong class="fl cor_blue">${position.year }年${position.month }月数据信息</div>		
 			总磷含量 ${position.ppv } mg/L<br/>
    			氨氮含量 ${position.pnv } mg/L<br/>
    			COD含量 ${position.pcod } mg/L<br/>

@@ -14,95 +14,171 @@
 </head>
 <body>
 <ul class="nav">
-    <li><a href="#">2016年1月</a>
+    <li><a href="#">雨水系统</a>
         <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
+            <li>
+            <a href="#">2016年</a>
+            <ul>
+            	<li><a href="GetPositionServlet?year=2016&&month=1" target="mainFrame"">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="GetPositionServlet?year=2016&&month=4" target="mainFrame">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2017年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2018年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
         </ul>
     </li>
-    <li><a href="#">2016年2月</a>
+        <li><a href="#">地表水系统</a>
         <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
+            <li>
+            <a href="#">2016年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2017年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2018年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
         </ul>
     </li>
-        <li><a href="#">2016年3月</a>
+        <li><a href="#">泵站系统</a>
         <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="">氨氮含量折线图</a></li>
-            <li><a href="">总磷含量折线图</a></li>
+            <li>
+            <a href="#">2016年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2017年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
+            <li>
+            <a href="#">2018年</a>
+            <ul>
+            	<li><a href="#">一月</a>
+            	<li><a href="#">二月</a>
+            	<li><a href="#">三月</a>
+            	<li><a href="#">四月</a>
+            	<li><a href="#">五月</a>
+            	<li><a href="#">六月</a>
+            	<li><a href="#">七月</a>
+            	<li><a href="#">八月</a>
+            	<li><a href="#">九月</a>
+            	<li><a href="#">十月</a>
+            	<li><a href="#">十一月</a>
+            	<li><a href="#">十二月</a>
+            </ul>
+            </li>
         </ul>
     </li>
-        <li><a href="GetPositionServlet" target="mainFrame">2016年4月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="line.jsp" target="mainFrame">氨氮含量折线图</a></li>
-            <li><a href="line.jsp" target="mainFrame">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年5月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年6月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年7月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年8月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年9月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年10月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年11月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-        <li><a href="#">2016年12月</a>
-        <ul>
-            <li><a href="#">COD折线图</a></li>
-            <li><a href="#">氨氮含量折线图</a></li>
-            <li><a href="#">总磷含量折线图</a></li>
-        </ul>
-    </li>
-    <li><a href="image2.jsp" target="mainFrame">地表水及泵站监测点</a>
-    </li>
-    <li><a href="shuixi.jsp" target="mainFrame">分水系</a>
-    </li>
-</ul>
 
 <script type="text/javascript">
 $(document).ready(function() {

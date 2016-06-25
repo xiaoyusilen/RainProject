@@ -12,6 +12,37 @@ public class Position {
 	private Double pnv;
 	private Double pcod;
 	private Double pcom;
+	private String month;
+	private String year;
+	public Position(int pno, String pname, String pinfo, Double px, Double py, String pcss1, String pcss2, Double ppv,
+			Double pnv, Double pcod, Double pcom, String month, String year) {
+		super();
+		this.pno = pno;
+		this.pname = pname;
+		this.pinfo = pinfo;
+		this.px = px;
+		this.py = py;
+		this.pcss1 = pcss1;
+		this.pcss2 = pcss2;
+		this.ppv = ppv;
+		this.pnv = pnv;
+		this.pcod = pcod;
+		this.pcom = pcom;
+		this.month = month;
+		this.year = year;
+	}
+	public String getMonth() {
+		return month;
+	}
+	public void setMonth(String month) {
+		this.month = month;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
 	public Double getPpv() {
 		return ppv;
 	}

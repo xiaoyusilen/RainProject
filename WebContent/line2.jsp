@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom 基于准备好的dom，初始化echarts实例-->
-    <div id="main" style="width: 500px;height:500px;"></div>
+    <div id="main" style="width: 700px;height:500px;"></div>
      <script type="text/javascript">
     // 获取从Servlet中存入ajax的json数据
         $(document).ready(function(){
@@ -32,9 +32,14 @@
         		containLabel: true
     		}, // 样式
     		toolbox: {
-        		feature: {
-            		saveAsImage: {}
-       	 		}
+    	        show: true,
+    	        feature: {
+    	            dataZoom: {},
+    	            dataView: {readOnly: false},
+    	            magicType: {type: ['line', 'bar']},
+    	            restore: {},
+    	            saveAsImage: {}
+    	        }
     		},
     		xAxis : [
              {
@@ -43,29 +48,56 @@
                  data : ['1','2','3','4','5']
         	}],
     		yAxis: {
-        		type: 'value'
+        		type: 'value',
+                axisLabel: {
+                    formatter: '{value} mg/L'
+                }
     		},
     		series : [
               {
-                  name:'总磷含量',
+            	  name:'总磷含量',
                   type:'line',
-                  stack:'总量',
-                  data:['0.1','0.4','0.7','0.2','1.1']
+                  data:['0.1','0.4','0.7','0.2','1.1'],
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+              markLine:{
+            	  data:[{type:'min',name:'最小值'}]
+              }
                   
               },
               {
                   name:'氨氮含量',
                   type:'line',
                   stack:'总量',
-                  data:['4.1','2.3','3.3','1.1','2.5']
-                  
+                  data:['4.1','2.3','3.3','1.1','2.5'],
+              	  markPoint: {
+                  data: [
+                      {type: 'max', name: '最大值'},
+                      {type: 'min', name: '最小值'}
+                  ]
+              },
+              markLine:{
+            	  data:[{type:'min',name:'最小值'}]
+              }
               },
               {
                   name:'COD含量',
                   type:'line',
                   stack:'总量',
-                  data:['2.3','4.3','2.3','1.1','2.3']
-                  
+                  data:['2.3','4.3','2.3','1.1','2.3'],
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine:{
+                	  data:[{type:'min',name:'最小值'}]
+                  } 
               }
           ]};
         // 使用刚指定的配置项和数据显示图表。
