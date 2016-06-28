@@ -4,21 +4,23 @@ public class Point {
 
 	private int pno;
 	private String pname;
-	private Double ph;
-	private Double nh;
-	private Double kmnp;
-	private Double cod;
-	private Double pdo;
-	private Double bod5;
-	private Double tem;
-	private Double item;
-	private Double yls;
-	private Double tn;
-	private Double tp;
+	private Double rph;
+	private Double rnh;
+	private Double rkm;
+	private Double rcod;
+	private Double rdo;
+	private Double rbod;
+	private Double rwt;
+	private Double rxf;
+	private Double ryls;
+	private Double rtn;
+	private Double rtp;
 	private Double px;
 	private Double py;
 	private String pcss1;
 	private String pcss2;
+	private int year;
+	private int month;
 	public int getPno() {
 		return pno;
 	}
@@ -31,71 +33,71 @@ public class Point {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public Double getPh() {
-		return ph;
+	public Double getRph() {
+		return rph;
 	}
-	public void setPh(Double ph) {
-		this.ph = ph;
+	public void setRph(Double rph) {
+		this.rph = rph;
 	}
-	public Double getNh() {
-		return nh;
+	public Double getRnh() {
+		return rnh;
 	}
-	public void setNh(Double nh) {
-		this.nh = nh;
+	public void setRnh(Double rnh) {
+		this.rnh = rnh;
 	}
-	public Double getKmnp() {
-		return kmnp;
+	public Double getRkm() {
+		return rkm;
 	}
-	public void setKmnp(Double kmnp) {
-		this.kmnp = kmnp;
+	public void setRkm(Double rkm) {
+		this.rkm = rkm;
 	}
-	public Double getCod() {
-		return cod;
+	public Double getRcod() {
+		return rcod;
 	}
-	public void setCod(Double cod) {
-		this.cod = cod;
+	public void setRcod(Double rcod) {
+		this.rcod = rcod;
 	}
-	public Double getPdo() {
-		return pdo;
+	public Double getRdo() {
+		return rdo;
 	}
-	public void setPdo(Double pdo) {
-		this.pdo = pdo;
+	public void setRdo(Double rdo) {
+		this.rdo = rdo;
 	}
-	public Double getBod5() {
-		return bod5;
+	public Double getRbod() {
+		return rbod;
 	}
-	public void setBod5(Double bod5) {
-		this.bod5 = bod5;
+	public void setRbod(Double rbod) {
+		this.rbod = rbod;
 	}
-	public Double getTem() {
-		return tem;
+	public Double getRwt() {
+		return rwt;
 	}
-	public void setTem(Double tem) {
-		this.tem = tem;
+	public void setRwt(Double rwt) {
+		this.rwt = rwt;
 	}
-	public Double getItem() {
-		return item;
+	public Double getRxf() {
+		return rxf;
 	}
-	public void setItem(Double item) {
-		this.item = item;
+	public void setRxf(Double rxf) {
+		this.rxf = rxf;
 	}
-	public Double getYls() {
-		return yls;
+	public Double getRyls() {
+		return ryls;
 	}
-	public void setYls(Double yls) {
-		this.yls = yls;
+	public void setRyls(Double ryls) {
+		this.ryls = ryls;
 	}
-	public Double getTn() {
-		return tn;
+	public Double getRtn() {
+		return rtn;
 	}
-	public void setTn(Double tn) {
-		this.tn = tn;
+	public void setRtn(Double rtn) {
+		this.rtn = rtn;
 	}
-	public Double getTp() {
-		return tp;
+	public Double getRtp() {
+		return rtp;
 	}
-	public void setTp(Double tp) {
-		this.tp = tp;
+	public void setRtp(Double rtp) {
+		this.rtp = rtp;
 	}
 	public Double getPx() {
 		return px;
@@ -121,31 +123,47 @@ public class Point {
 	public void setPcss2(String pcss2) {
 		this.pcss2 = pcss2;
 	}
-	public Point(int pno, String pname, Double ph, Double nh, Double kmnp, Double cod, Double pdo, Double bod5,
-			Double tem, Double item, Double yls, Double tn, Double tp, Double px, Double py, String pcss1,
-			String pcss2) {
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	public Point(int pno, String pname, Double rph, Double rnh, Double rkm, Double rcod, Double rdo, Double rbod,
+			Double rwt, Double rxf, Double ryls, Double rtn, Double rtp, Double px, Double py, String pcss1,
+			String pcss2, int year, int month) {
 		super();
 		this.pno = pno;
 		this.pname = pname;
-		this.ph = ph;
-		this.nh = nh;
-		this.kmnp = kmnp;
-		this.cod = cod;
-		this.pdo = pdo;
-		this.bod5 = bod5;
-		this.tem = tem;
-		this.item = item;
-		this.yls = yls;
-		this.tn = tn;
-		this.tp = tp;
+		this.rph = rph;
+		this.rnh = rnh;
+		this.rkm = rkm;
+		this.rcod = rcod;
+		this.rdo = rdo;
+		this.rbod = rbod;
+		this.rwt = rwt;
+		this.rxf = rxf;
+		this.ryls = ryls;
+		this.rtn = rtn;
+		this.rtp = rtp;
 		this.px = px;
 		this.py = py;
 		this.pcss1 = pcss1;
 		this.pcss2 = pcss2;
+		this.year = year;
+		this.month = month;
 	}
 	public Point() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	
 }

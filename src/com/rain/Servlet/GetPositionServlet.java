@@ -34,16 +34,21 @@ public class GetPositionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("unused")
 		PrintWriter out = response.getWriter();
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
 		String y = request.getParameter("year");
 		int year = Integer.valueOf(y);
 		String m = request.getParameter("month");
 		int month = Integer.valueOf(m);
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.selectAll(month,year);
-
-		if (listPosition != null) {
+		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			response.sendRedirect("image.jsp");
+		}
+		else
+		{
+			out.print("<script language='javascript'>alert('No Data!');window.location.href='GetNewPositionServlet';</script>");
 		}
 	}
 

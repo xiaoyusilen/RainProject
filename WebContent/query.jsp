@@ -7,25 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="QueryServlet"  method="post">
+	<form name="query" action="QueryServlet"  method="post" onsubmit="return validate(this);">
 			<br>
 			年份：
 			<select name="year">
-				<option>--请选择年份--</option>
 				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
 			</select>
 	  		<br>
 			<br>
 			月份：
 			<select name="month">
-				<option>--请选择月份--</option>
 				<option value="4">四月</option>
 			</select>
 			<br>
 			<br>
 			数据类型：
 			<select name="type">
-				<option>--请选择数据类型--</option>
 				<option value="ppv">总磷含量</option>
 				<option value="pnv">氨氮含量</option>
 				<option value="pcod">COD含量</option>
@@ -34,7 +33,6 @@
 			<br>
 			计算方式：
 			<select name="way">
-				<option>--请选择方式--</option>
 				<option value=">">></option>
 				<option value="<"><</option>
 				<option value="=">=</option>
@@ -44,7 +42,15 @@
 			范围：
 			<input type="text" name="view"><br><br>
 		<input type="submit" value="查询">&nbsp;
-		<input type="reset" value="重置"><br>
 		</form>
+		<script type="text/javascript">
+		function validate(classcal) {
+			if ( query.view.value== "") {
+				alert("请填写查询范围！");
+				return false;
+			}
+			return true;
+		}
+</script>
 </body>
 </html>

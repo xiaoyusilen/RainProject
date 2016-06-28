@@ -49,10 +49,11 @@ public class QueryServlet extends HttpServlet {
 		String a = request.getParameter("year");
 		String b = request.getParameter("month");
 		String c = request.getParameter("type");
+		HttpSession session=request.getSession();
+		session.setAttribute("type",c);
 		String d = request.getParameter("way");
 		String e = request.getParameter("view");
 		PrintWriter out = response.getWriter();
-		HttpSession session=request.getSession();
 		
 		int year = Integer.valueOf(a);
 		int month = Integer.valueOf(b);
@@ -63,6 +64,7 @@ public class QueryServlet extends HttpServlet {
 		
 		if (listPosition != null) {
 			request.getSession().setAttribute("listPosition", listPosition);
+			session.setAttribute("size",listPosition.size());
 			response.sendRedirect("ShowQuery.jsp");
 		}
 		

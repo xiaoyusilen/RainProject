@@ -26,11 +26,11 @@ a:hover { color: #D40000; text-decoration: none}
 .fr{float:right}
 .cor_org,.cor_org:hover{ color: #F60; }
 .hidden{display:none}
-.m2mapBox { margin: 24px auto; height: 795px; width: 975px; position: relative; }
+.m2mapBox { margin: 24px auto; height: 728px; width: 495px; position: relative; }
 .m2mapCon { padding: 5px 18px 26px; width: 252px; position: absolute; border: 1px solid #C8C8C8; background: #FFF; }
 .m2map_t { line-height: 44px; height: 44px; border-bottom: 1px solid #DEDEDE; font-size: 16px; color: #3068b4; font-weight: bold; }
 .m2mapList ul li { padding-bottom: 12px; border-bottom: 1px dotted #DEDEDE; line-height: 22px; }
-.m2map_t2 { line-height: 22px; height: 22px; padding-top: 12px; }
+.m2map_t2 { line-height: 22px; height: 28px; padding-top: 12px; }
 .m2mapCon1{ left: 98.01px; top: 50.545px;}
 .m2mapCon2{ left: 129.8px; top: 45.76px; }
 .m2mapCon3{ left: 164.175px; top: 42.79px; }
@@ -141,4 +141,21 @@ a:hover { color: #D40000; text-decoration: none}
 .m2mapCon108{ left: 375px; top:129px; }
 .m2mapCon109{ left: 369px; top:97px; }
 .m2mapCon110{ left: 365px; top:65px; }
+.m2mapCon111{ left:260px; top:20px;}
+.m2mapCon112{ left:301px; top:355px;}
+.m2mapCon113{ left:475.5px; top:451px;}
+.m2mapCon114{ left:263px; top:290.4px;}
+.m2mapCon115{ left:443.6px; top:417.1px;}
+.m2mapCon116{ left:173.8px; top:150px;}
+.m2mapCon117{ left:314.3px; top:344.5px;}
+.m2mapCon118{ left:59.3px; top:37px;}
+.m2mapCon119{ left:476px; top:145px;}
+.m2mapCon120{ left:480px; top:367px;}
+.m2mapCon121{ left:274px; top:98px;}
+.m2mapCon122{ left:324px; top:28px;}
+.m2mapCon123{ left:469px; top:144px;}
+.m2mapCon124{ left:260px; top:285px;}
+.m2mapCon125{ left:347px; top:402px;}
+.m2mapCon126{ left:473px; top:444px;}
+.m2mapCon127{ left:443px; top:409px;}
 .m2close { position: absolute; top: 22px; right: 18px; cursor: pointer; }

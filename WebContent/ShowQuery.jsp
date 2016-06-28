@@ -5,57 +5,85 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/tablecloth.js"></script>
+<link rel="stylesheet" href="css/tablecloth.css" type="text/css" media="screen" />
 <title>Insert title here</title>
-<style type="text/css">
-body,td,th {
-}
-	table.gridtable
-	{
-		font-family:verdana,arial,sans-serif;
-		font-size:12px;
-		color:#333333;
-		border-width:1px;
-		border-color:#666666;
-		border-collapse:collapse;
-	}
-	table.gridtable th
-	{
-		border-width:1px;
-		padding:8px;
-		border-style:solid;
-		border-color:#666666;
-		background-color:#dedede;
-	}
-	table.gridtable td
-	{
-		border-width:1px;
-		
-		border-style:solid;
-		border-color:#666666;
-		background-color:#ffffff;
-	}
-	</style>
 </head>
 <body>
-<table class="gridtable" width="280" align="center" action="query.jsp">
-		<tr>
+<%
+	String type=(String)session.getAttribute("type");
+	int size=(Integer)session.getAttribute("size");
+	Double rate=size/110.0;
+%>
+<table width="280" align="center" action="query.jsp">
+		<c:choose>
+			<c:when test="${sessionScope.type=='ppv'}">
+			<th colspan="4">
+			本次查询超标率为<%out.print((double)((int)(rate*100))/100); %>
+			</th><br>
+			<tr>
+			<th>点位</th>
+			<th bgcolor="#e5f1f4">总磷含量</th>
+			<th>氨氮含量</th>
+			<th>COD含量</th>
+			</tr>
+			<c:forEach items="${sessionScope.listPosition }" var="position">
+				<tr>
+				<td>${position.pno }</td>
+				<td bgcolor="#e5f1f4">${position.ppv }</td>
+				<td>${position.pnv }</td>
+				<td>${position.pcod }</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<input type="button" value="返回" onClick="window.location.href='query.jsp'">
+			</tr>
+			</c:when>
+			<c:when test="${sessionScope.type=='pnv'}">
+			<th colspan="4">
+			本次查询超标率为<%out.print((double)((int)(rate*100))/100); %>
+			</th><br>
+			<tr>
+			<th>点位</th>
+			<th>总磷含量</th>
+			<th bgcolor="#e5f1f4">氨氮含量</th>
+			<th>COD含量</th>
+			</tr>
+			<c:forEach items="${sessionScope.listPosition }" var="position">
+				<tr>
+				<td>${position.pno }</td>
+				<td>${position.ppv }</td>
+				<td bgcolor="#e5f1f4">${position.pnv }</td>
+				<td>${position.pcod }</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<input type="button" value="返回" onClick="window.location.href='query.jsp'">
+			</tr>
+			</c:when>
+			<c:when test="${sessionScope.type=='pcod'}">
+			<th colspan="4">
+			本次查询超标率为<%out.print((double)((int)(rate*100))/100); %>
+			</th><br>
+			<tr>
 			<th>点位</th>
 			<th>总磷含量</th>
 			<th>氨氮含量</th>
-			<th>COD含量</th>
-		</tr>
-		<c:forEach items="${sessionScope.listPosition }" var="position">
-			<tr>
-			<td>${position.pno }</td>
-			<td>${position.ppv }</td>
-			<td>${position.pnv }</td>
-			<td>${position.pcod }</td>
+			<th bgcolor="#e5f1f4">COD含量</th>
 			</tr>
-		</c:forEach>
-		<tr>
-		<input type="button" value="返回" onClick="window.location.href='query.jsp'">
-		</tr>
+			<c:forEach items="${sessionScope.listPosition }" var="position">
+				<tr>
+				<td>${position.pno }</td>
+				<td>${position.ppv }</td>
+				<td>${position.pnv }</td>
+				<td bgcolor="#e5f1f4">${position.pcod }</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<input type="button" value="返回" onClick="window.location.href='query.jsp'">
+			</tr>
+			</c:when>
+		</c:choose>
 </table>
-</script>
 </body>
 </html>
