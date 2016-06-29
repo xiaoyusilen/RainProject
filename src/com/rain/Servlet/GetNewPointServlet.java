@@ -49,6 +49,7 @@ public class GetNewPointServlet extends HttpServlet {
 		List<Point> listPoint = pointdao.selectAll(year,month);
 		if (listPoint != null) {
 			request.getSession().setAttribute("listPoint", listPoint);
+			request.getSession().setAttribute("success", 1);
 			response.sendRedirect("surfacewater.jsp");
 		}
 	}

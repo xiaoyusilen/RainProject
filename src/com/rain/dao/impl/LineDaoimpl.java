@@ -17,23 +17,36 @@ public class LineDaoimpl {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
-	public List<line> selectAll() {
+	public List<line> selectAll(int pno,String type) {
 		// TODO Auto-generated method stub
 		List<line> listLine = new ArrayList<line>();
 		
-		String strSQL = "select pno,ppv,pnv,pcod from record";
+		String strSQL = null;
+		if(type.equals("ppv"))
+		{
+			strSQL = "select ppv,year,month from record where pno=? group by month";
+		}
+		else if(type.equals("pnv"))
+		{
+			strSQL = "select pnv,year,month from record where pno=? group by month";
+		}
+		else if(type.equals("pcod"))
+		{
+			strSQL = "select pcod,year,month from record where pno=? group by month";
+		}
 		
-		ResultSet rs = sqlManager.execQuery(connection, strSQL, new Object[] {});
+		Object[] params = {pno};
+		
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
 		
 		
 		try {
 			while(rs.next())
 			{
 				line line1 = new line();
-				line1.setPno(rs.getInt(1));
-				line1.setPpv(rs.getDouble(2));
-				line1.setPnv(rs.getDouble(3));
-				line1.setPcod(rs.getDouble(4));
+				line1.setData(rs.getDouble(1));
+				line1.setYear(rs.getString(2));
+				line1.setMonth(rs.getString(3));
 				
 				listLine.add(line1);
 			}

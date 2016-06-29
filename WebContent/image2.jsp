@@ -66,10 +66,6 @@
                 context.arc(px,py, 5, 0, 2 * Math.PI, true);
                 context.fillStyle = "#000000";
             	context.fill();
-            	canvas.onclick=function(e){
-            	    e=e||event;
-            	    alert("111");//点击后弹出信息
-            	}
    			</script>
 			</div>
 <div class="div2">

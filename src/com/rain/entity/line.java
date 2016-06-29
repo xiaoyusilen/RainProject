@@ -2,53 +2,37 @@ package com.rain.entity;
 
 public class line {
 	private int pno;
-	private Double ppv;
-	private Double pnv;
-	private Double pcod;
-	private int year;
-	private int month;
+	private Double data;
+	private String year;
+	private String month;
 	public int getPno() {
 		return pno;
 	}
 	public void setPno(int pno) {
 		this.pno = pno;
 	}
-	public Double getPpv() {
-		return ppv;
+	public Double getData() {
+		return data;
 	}
-	public void setPpv(Double ppv) {
-		this.ppv = ppv;
+	public void setData(Double data) {
+		this.data = data;
 	}
-	public Double getPnv() {
-		return pnv;
-	}
-	public void setPnv(Double pnv) {
-		this.pnv = pnv;
-	}
-	public Double getPcod() {
-		return pcod;
-	}
-	public void setPcod(Double pcod) {
-		this.pcod = pcod;
-	}
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
-	public int getMonth() {
+	public String getMonth() {
 		return month;
 	}
-	public void setMonth(int month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
-	public line(int pno, Double ppv, Double pnv, Double pcod, int year, int month) {
+	public line(int pno, Double data, String year, String month) {
 		super();
 		this.pno = pno;
-		this.ppv = ppv;
-		this.pnv = pnv;
-		this.pcod = pcod;
+		this.data = data;
 		this.year = year;
 		this.month = month;
 	}
@@ -56,6 +40,7 @@ public class line {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 
 }
