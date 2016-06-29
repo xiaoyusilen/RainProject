@@ -92,7 +92,7 @@ public class GetLineServlet extends HttpServlet implements Servlet {
 			request.getSession().setAttribute("title", s4);
 		}
 		request.getSession().setAttribute("p", no);
-		response.sendRedirect("line2.jsp");
+		response.sendRedirect("line.jsp");
 	}
 
 	/**
