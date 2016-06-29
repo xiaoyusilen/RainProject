@@ -19,7 +19,18 @@
 			<br>
 			月份：
 			<select name="month">
+				<option value="1">一月</option>
+				<option value="2">二月</option>
+				<option value="3">三月</option>
 				<option value="4">四月</option>
+				<option value="5">五月</option>
+				<option value="6">六月</option>
+				<option value="7">七月</option>
+				<option value="8">八月</option>
+				<option value="9">九月</option>
+				<option value="10">十月</option>
+				<option value="11">十一月</option>
+				<option value="12">十二月</option>
 			</select>
 			<br>
 			<br>

@@ -124,6 +124,12 @@ public class Position {
 		this.pnv = pnv;
 		this.pcod = pcod;
 	}
+	public Position(int pno, Double px,Double py) {
+		super();
+		this.pno = pno;
+		this.px = px;
+		this.py = py;
+	}
 	
 	public Position() {
 		super();

@@ -17,9 +17,7 @@
 </head>
 <body> 
 <span id="lbresult"> 
-<!-- <img src="images/1.jpg" width="1191.6" height="817.2" usemap="#Map" border="0" /> -->
 <img src="images/1.jpg" width="728.2" height="499.4" usemap="#Map" border="0" />
-<!-- 建立图片热点信息,coords的参数为坐标x、y以及选取半径 -->
   <map name="Map" id="Map">
   	<c:forEach items="${sessionScope.listPosition }" var="position">
 		<area class="${position.pcss1 }" shape="circle" coords="${position.px },${position.py },2" href="javascript:void(-1)" />
@@ -49,7 +47,6 @@
   		</div>
 	</c:forEach>
 	</span>
-
 
 </body>
 </html>

@@ -19,6 +19,28 @@ public class PositionDaoimpl implements PositionDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	public Position query(int pno){
+		
+		String strSQL = "select pno,px/0.09*0.055,py/0.09*0.055 from position where pno=?";
+		
+		Object[] params = {pno};
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
+		try {
+			Position position = new Position();
+			while(rs.next()){
+				position.setPno(rs.getInt(1));
+				position.setPx(rs.getDouble(2));
+				position.setPy(rs.getDouble(3));
+			}
+			return position;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
 	public Time querytime(){
 		
 		
@@ -125,6 +147,8 @@ public class PositionDaoimpl implements PositionDao {
 				position.setPpv(rs.getDouble(3));
 				position.setPnv(rs.getDouble(4));
 				position.setPcod(rs.getDouble(5));
+				position.setYear(rs.getString(7));
+				position.setMonth(rs.getString(8));
 				
 				listPosition.add(position);
 			}

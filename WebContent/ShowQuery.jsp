@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="js/tablecloth.js"></script>
+
 <link rel="stylesheet" href="css/tablecloth.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/tablecloth.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
 			</tr>
 			<c:forEach items="${sessionScope.listPosition }" var="position">
 				<tr>
-				<td>${position.pno }</td>
+				<td><a href="GetPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
 				<td bgcolor="#e5f1f4">${position.ppv }</td>
 				<td>${position.pnv }</td>
 				<td>${position.pcod }</td>
