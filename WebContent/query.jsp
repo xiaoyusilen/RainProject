@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script language="javascript">
+	var success='<%=session.getAttribute("success")%>';
+	if(success=="1")
+	{
+		alert("No Data!");
+		<%session.removeAttribute("success");%>
+	}
+</script>
 	<form name="query" action="QueryServlet"  method="post" onsubmit="return validate(this);">
 			<br>
 			年份：
@@ -51,7 +59,7 @@
 			<br>
 			<br>
 			范围：
-			<input type="text" name="view"><br><br>
+			<input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="view" /><br><br> 
 		<input type="submit" value="查询">&nbsp;
 		</form>
 		<script type="text/javascript">

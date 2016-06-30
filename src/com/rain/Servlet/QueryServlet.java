@@ -61,7 +61,7 @@ public class QueryServlet extends HttpServlet {
 		
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.query(year,month,c,d,view);
-		
+		System.out.println(listPosition.size());
 		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			session.setAttribute("size",listPosition.size());
@@ -69,7 +69,8 @@ public class QueryServlet extends HttpServlet {
 		}
 		else
 		{
-			out.print("<script language='javascript'>alert('No Data!');window.location.href='query.jsp';</script>");
+			request.getSession().setAttribute("success", 1);
+			response.sendRedirect("query.jsp");
 		}
 		
 	}
