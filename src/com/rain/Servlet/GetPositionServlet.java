@@ -36,26 +36,6 @@ public class GetPositionServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
-		if(request.getParameter("pno")!=null)
-		{
-			int pno = Integer.valueOf(request.getParameter("pno"));
-			String y = request.getParameter("year");
-			int year = Integer.valueOf(y);
-			String m = request.getParameter("month");
-			int month = Integer.valueOf(m);
-			PositionDao positiondao = new PositionDaoimpl();
-			Position position = positiondao.query(pno);
-			List<Position> listPosition = positiondao.selectAll(month, year);
-			request.getSession().setAttribute("pno", pno);
-			request.getSession().setAttribute("px",position.getPx());
-			request.getSession().setAttribute("py",position.getPy());
-			request.getSession().setAttribute("listPosition", listPosition);
-			request.getSession().setAttribute("year", year);
-			request.getSession().setAttribute("month", month);
-			response.sendRedirect("image2.jsp");
-		}
-		else
-		{
 			String y = request.getParameter("year");
 			int year = Integer.valueOf(y);
 			String m = request.getParameter("month");
@@ -72,7 +52,6 @@ public class GetPositionServlet extends HttpServlet {
 			{
 				out.print("<script language='javascript'>alert('No Data!');window.location.href='GetNewPositionServlet';</script>");
 			}
-		}
 	}
 
 	/**

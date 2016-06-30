@@ -14,16 +14,16 @@ import com.rain.dao.impl.PositionDaoimpl;
 import com.rain.entity.Position;
 
 /**
- * Servlet implementation class GetLargePositionServlet
+ * Servlet implementation class FDServlet
  */
-@WebServlet("/GetLargePositionServlet")
-public class GetLargePositionServlet extends HttpServlet {
+@WebServlet("/FDServlet")
+public class FDServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetLargePositionServlet() {
+    public FDServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,16 +34,18 @@ public class GetLargePositionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
 		int year = (Integer)request.getSession().getAttribute("year");
 		int month = (Integer)request.getSession().getAttribute("month");
+		System.out.println("FD"+year);
 		PositionDao positiondao = new PositionDaoimpl();
-		List<Position> listPosition = positiondao.selectLargeAll(month,year);
-		System.out.println(listPosition.size());
+		List<Position> listPosition = positiondao.selectAll(month,year);
 		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			request.getSession().setAttribute("year", year);
 			request.getSession().setAttribute("month", month);
-			response.sendRedirect("LargeImage.jsp");
+			response.sendRedirect("image.jsp");
 		}
 	}
 

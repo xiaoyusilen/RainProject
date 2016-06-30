@@ -57,7 +57,7 @@
   		</div>
 	</c:forEach>
 	<br>
-    <form action="image.jsp" method="post">
+    <form action="FDServlet" method="post">
     	<input type="submit" value="缩小"> <br>
     </form>
 	</span>

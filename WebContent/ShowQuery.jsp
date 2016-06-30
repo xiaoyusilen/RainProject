@@ -30,7 +30,7 @@
 			</tr>
 			<c:forEach items="${sessionScope.listPosition }" var="position">
 				<tr>
-				<td><a href="GetPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
+				<td><a href="GetColorPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
 				<td bgcolor="#e5f1f4">${position.ppv }</td>
 				<td>${position.pnv }</td>
 				<td>${position.pcod }</td>
@@ -52,7 +52,7 @@
 			</tr>
 			<c:forEach items="${sessionScope.listPosition }" var="position">
 				<tr>
-				<td><a href="GetPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
+				<td><a href="GetColorPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
 				<td>${position.ppv }</td>
 				<td bgcolor="#e5f1f4">${position.pnv }</td>
 				<td>${position.pcod }</td>
@@ -74,7 +74,7 @@
 			</tr>
 			<c:forEach items="${sessionScope.listPosition }" var="position">
 				<tr>
-				<td><a href="GetPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
+				<td><a href="GetColorPositionServlet?pno=${position.pno }&&year=${position.year}&&month=${position.month}" target="mainFrame">${position.pno }</a></td>
 				<td>${position.ppv }</td>
 				<td>${position.pnv }</td>
 				<td bgcolor="#e5f1f4">${position.pcod }</td>
