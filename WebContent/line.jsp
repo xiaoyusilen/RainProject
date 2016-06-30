@@ -34,6 +34,31 @@
     	%>
     	var type = '<%=session.getAttribute("type")%>';
     	var title = '<%=session.getAttribute("title")%>';
+    	var t1,t2;
+    	var x = 0;
+    	for(var i=0;i<time.length;i++){
+    		if(i==0)
+    		{
+    			t1=time[i];
+    		}
+    		if(i==time.length-1)
+    		{
+    			t2=time[i];
+    		}
+    	}
+    	var average;
+    	if(type=="总磷含量")
+    	{
+    		average=0.4;
+    	}
+    	else if(type=="氨氮含量")
+    	{
+    		average=2;
+    	}
+    	else if(type=="COD含量")
+    	{
+    		average=40;
+    	}
         var myChart = echarts.init(document.getElementById('main'));
         // 指定图表的配置项和数据
      	option = {
@@ -64,16 +89,27 @@
                  data : time
         	}],
     		yAxis: {
-        		type: 'value'
+        		type: 'value',
+                axisLabel: {
+                    formatter: '{value} mg/L'
+                }
     		},
     		series : [
               {
                   name:type,
                   type:'line',
                   stack:'总量',
-                  data:data
-                  
-              }
+                  data:data,
+                  markLine : {
+                      
+                	  data : [
+                	          [
+                	              {name: '标准限值', value: average,  xAxis:t1, yAxis: average},
+                	              {name: '标准限值', xAxis: t2, yAxis: average}
+                	          ]
+                	          ]
+                  }
+              },
           ]
         }
         // 使用刚指定的配置项和数据显示图表。
