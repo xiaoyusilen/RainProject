@@ -1,7 +1,6 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,19 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.rain.dao.PositionDao;
 import com.rain.dao.impl.PositionDaoimpl;
 import com.rain.entity.Position;
-import com.rain.entity.Time;
 
 /**
- * Servlet implementation class GetNewPositionServlet
+ * Servlet implementation class GetLargePositionServlet
  */
-@WebServlet("/GetNewPositionServlet")
-public class GetNewPositionServlet extends HttpServlet {
+@WebServlet("/GetLargePositionServlet")
+public class GetLargePositionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetNewPositionServlet() {
+    public GetLargePositionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,19 +34,17 @@ public class GetNewPositionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out = response.getWriter();
-		PositionDao positiondao = new PositionDaoimpl();
-		Time time = positiondao.querytime();
-		int year = Integer.valueOf(time.getYear());
-		int month = Integer.valueOf(time.getMonth());
+		int year = (Integer)request.getSession().getAttribute("year");
+		int month = (Integer)request.getSession().getAttribute("month");
 		System.out.println(year);
-		System.out.println(month);
-		List<Position> listPosition = positiondao.selectAll(month,year);
-		if (listPosition != null) {
+		PositionDao positiondao = new PositionDaoimpl();
+		List<Position> listPosition = positiondao.selectLargeAll(month,year);
+		System.out.println(listPosition.size());
+		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			request.getSession().setAttribute("year", year);
 			request.getSession().setAttribute("month", month);
-			response.sendRedirect("image.jsp");
+			response.sendRedirect("LargeImage.jsp");
 		}
 	}
 

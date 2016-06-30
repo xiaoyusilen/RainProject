@@ -50,6 +50,8 @@ public class GetPositionServlet extends HttpServlet {
 			request.getSession().setAttribute("px",position.getPx());
 			request.getSession().setAttribute("py",position.getPy());
 			request.getSession().setAttribute("listPosition", listPosition);
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
 			response.sendRedirect("image2.jsp");
 		}
 		else
@@ -62,6 +64,8 @@ public class GetPositionServlet extends HttpServlet {
 			List<Position> listPosition = positiondao.selectAll(month,year);
 			if (listPosition.size()>0) {
 				request.getSession().setAttribute("listPosition", listPosition);
+				request.getSession().setAttribute("year", year);
+				request.getSession().setAttribute("month", month);
 				response.sendRedirect("image.jsp");
 			}
 			else

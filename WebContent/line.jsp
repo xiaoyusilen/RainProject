@@ -79,5 +79,8 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
+    <form action="image.jsp"  method="post">
+    <input type="submit" value="返回"> <br>
+    </form>
 </body>
 </html>

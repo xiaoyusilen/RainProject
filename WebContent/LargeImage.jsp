@@ -5,6 +5,8 @@
     response.setCharacterEncoding("utf-8");
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="com.rain.entity.Position"%>
+<%@page import="java.util.*"%>     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,10 +22,10 @@
 	.div3{ width: 728px; height: 499px; float: left; position:absolute; z-index:10;}
 </style>
 </head>
-<body> 
+<body>
 <div class="div3">
 <span id="lbresult"> 
-<img src="images/5.png" width="728.2" height="499.4" usemap="#Map" border="0" />
+<img src="images/5.png" width="1324" height="908" usemap="#Map" border="0" />
   <map name="Map" id="Map">
   	<c:forEach items="${sessionScope.listPosition }" var="position">
 		<area class="${position.pcss1 }" shape="circle" coords="${position.px },${position.py },2" href="javascript:void(-1)" />
@@ -54,25 +56,51 @@
  		</div>
   		</div>
 	</c:forEach>
+	<br>
+    <form action="image.jsp" method="post">
+    	<input type="submit" value="缩小"> <br>
+    </form>
 	</span>
 </div>
 			<div class="div1">
-			<canvas id="myCanvas" width="728.2" height="499.4"></canvas>
-    		<script type=text/javascript>
-        		var canvas = document.getElementById("myCanvas");
-       			var context = canvas.getContext("2d");
-       			var px='<%=session.getAttribute("px")%>';
-       			var py='<%=session.getAttribute("py")%>';
-
-            	context.beginPath();
-                context.arc(px,py, 5, 0, 2 * Math.PI, true);
-                context.fillStyle = "#000000";
-            	context.fill();
+			<canvas id="myCanvas" width="1324" height="908"></canvas>
+			<script type="text/javascript">
+    			<%
+				List<Position> listPosition = (List<Position>)session.getAttribute("listPosition");
+    			%>
+    			alert("111");
+    			alert('<%=listPosition.size()%>');
+    			<%
+	            if(listPosition!=null)
+	            {
+	            	for(Position p:listPosition){
+	            		if(p.getPpv()>0.4||p.getPnv()>2||p.getPcod()>40)
+	            		{
+	            			%>
+	            			alert(<%p.getPx();%>)
+	                		var canvas = document.getElementById("myCanvas");
+	               			var context = canvas.getContext("2d");
+	                    	context.beginPath();
+	                        context.arc(<%p.getPx();%>,<%p.getPy();%>, 5, 0, 2 * Math.PI, true);
+	                        context.fillStyle = "#000000";
+	                    	context.fill();
+	                    	<%
+	            		}
+	            		else
+	            		{
+	            			%>alert("false");<%
+	            		}
+	            	}
+	            }
+	            else
+	            {
+	            	%>alert("false1");<%
+	            }
+			%>
    			</script>
 			</div>
 <div class="div2">
-<img src="images/1.jpg" width="728.2" height="499.4" usemap="#Map" border="0" />
+<img src="images/1.jpg" width="1324" height="908" border="0" />
 </div>
-
 </body>
 </html>

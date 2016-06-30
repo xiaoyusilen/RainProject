@@ -56,6 +56,10 @@
  		</div>
   		</div>
 	</c:forEach>
+	<br>
+    <form action="GetLargePositionServlet" method="post">
+    	<input type="submit" value="放大"> <br>
+    </form>
 	</span>
 </div>
 			<div class="div1">
@@ -63,6 +67,10 @@
 			<script type="text/javascript">
     			<%
 				List<Position> listPosition = (List<Position>)session.getAttribute("listPosition");
+    			%>
+    			alert("111");
+    			alert('<%=listPosition.size()%>');
+    			<%
 	            if(listPosition!=null)
 	            {
 	            	for(Position p:listPosition){

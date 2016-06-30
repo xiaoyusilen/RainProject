@@ -161,4 +161,43 @@ public class PositionDaoimpl implements PositionDao {
 			connectionManager.closeConnection(connection);
 	}
 	}
+	public List<Position> selectLargeAll(int month,int year) {
+		// TODO Auto-generated method stub
+		List<Position> listPosition = new ArrayList<Position>();
+		
+		String strSQL = "select record.pno,ppv,pnv,pcod,pcom,pname,pinfo,px/0.09*0.1,py/0.09*0.1,pcss1,pcss2,month,year from record,position where record.pno=position.pno and year=? and month=? group by position.pno";
+		
+		Object[] params = {year,month};
+		
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
+		
+		try {
+			while(rs.next())
+			{
+				Position position = new Position();
+				position.setPno(rs.getInt(1));
+				position.setPpv(rs.getDouble(2));
+				position.setPnv(rs.getDouble(3));
+				position.setPcod(rs.getDouble(4));
+				position.setPcom(rs.getDouble(5));
+				position.setPname(rs.getString(6));
+				position.setPinfo(rs.getString(7));
+				position.setPx(rs.getDouble(8));
+				position.setPy(rs.getDouble(9));
+				position.setPcss1(rs.getString(10));
+				position.setPcss2(rs.getString(11));
+				position.setMonth(rs.getString(12));
+				position.setYear(rs.getString(13));
+				
+				listPosition.add(position);
+			}
+			return listPosition;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}finally{
+			connectionManager.closeConnection(connection);
+		}
+	}
 }

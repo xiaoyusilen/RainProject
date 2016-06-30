@@ -50,6 +50,8 @@ public class GetNewPointServlet extends HttpServlet {
 		if (listPoint != null) {
 			request.getSession().setAttribute("listPoint", listPoint);
 			request.getSession().setAttribute("success", 1);
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
 			response.sendRedirect("surfacewater.jsp");
 		}
 	}
