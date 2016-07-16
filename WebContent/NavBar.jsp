@@ -124,6 +124,15 @@
             </li>
         </ul>
     </li>
+    <li><a href="#">水系</a>
+        <ul>
+            <li><a href="East.jsp" target="mainFrame">东部水系</a>
+            <li><a href="South.jsp" target="mainFrame">南部水系</a>
+            <li><a href="West.jsp" target="mainFrame">西部水系</a>
+            <li><a href="North.jsp" target="mainFrame">北部水系</a>
+        </ul>
+    </li>
+        
 
 <script type="text/javascript">
 $(document).ready(function() {

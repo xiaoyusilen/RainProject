@@ -54,9 +54,6 @@
 			TN ${point.rtn }mg/L<br/>
 			TP ${point.rtp }mg/L<br/>	
    			</li>
-   			<li>
-   			<div class="m2map_t2"><strong class="fl cor_blue"><a href="line2.jsp" target="_self"><u>>>分析图<<</u></a></strong></div>
-   			</li>
  			</ul>
  		</div>
   		</div>
