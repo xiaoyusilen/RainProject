@@ -9,7 +9,7 @@
 <body>
 <img src="images/South.png" border="0" usemap="#Map">
 <map name="Map">
-	<area shape="ploy" coords="9,222,497,74,527,176,43,323" href="choose.jsp?t=s1" target="_self">
+	<area shape="polygon" coords="9,222,497,74,527,176,43,323" href="choose.jsp?t=s1" target="_self">
 </map>
 </body>
 </html>

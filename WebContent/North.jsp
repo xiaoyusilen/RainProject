@@ -10,8 +10,8 @@
 <img src="images/North.png" border="0" usemap="#Map">
 <map name="Map">
   <area shape="rect" coords="0,55,542,102" href="choose.jsp?t=n1" target="_self">
-  <area shape="ploy" coords="93,256,493,83,510,122,111,297" href="choose.jsp?t=n2" target="_self">
-  <area shape="ploy" coords="221,273,230,297,248,297,531,185,519,154" href="choose.jsp?t=n3" target="_self">
+  <area shape="polygon" coords="93,256,493,83,510,122,111,297" href="choose.jsp?t=n2" target="_self">
+  <area shape="polygon" coords="221,273,230,297,248,297,531,185,519,154" href="choose.jsp?t=n3" target="_self">
 </map>
 </body>
 </html>
