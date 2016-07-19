@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="images/West.png" border="0" usemap="#Map">
+<center><img src="images/West.png" border="0" usemap="#Map"></center>
 <map name="Map">
 </map>
 </body>

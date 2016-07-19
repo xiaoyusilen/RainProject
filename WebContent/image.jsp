@@ -25,7 +25,7 @@
 <body> 
 <div class="div3">
 <span id="lbresult"> 
-<img src="images/5.png" width="728.2" height="499.4" usemap="#Map" border="0" />
+<center><img src="images/5.png" width="728.2" height="499.4" usemap="#Map" border="0" /></center>
   <map name="Map" id="Map">
   	<c:forEach items="${sessionScope.listPosition }" var="position">
 		<area class="${position.pcss1 }" shape="circle" coords="${position.px },${position.py },2" href="javascript:void(-1)" />

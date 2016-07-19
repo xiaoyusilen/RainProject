@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="images/South.png" border="0" usemap="#Map">
+<center><img src="images/South.png" border="0" usemap="#Map"></center>
 <map name="Map">
 	<area shape="polygon" coords="9,222,497,74,527,176,43,323" href="choose.jsp?t=s1" target="_self">
 </map>
