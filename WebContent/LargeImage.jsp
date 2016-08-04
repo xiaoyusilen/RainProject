@@ -58,7 +58,7 @@
 	</c:forEach>
 	<br>
     <form action="FDServlet" method="post">
-    	<input type="submit" value="缩小"> <br>
+    	<input style="height:30px;width:100px;font-size:18px;" type="submit" value="缩小"> <br>
     </form>
 	</span>
 </div>

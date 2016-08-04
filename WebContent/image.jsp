@@ -58,7 +58,7 @@
 	</c:forEach>
 	<br>
     <form action="GetLargePositionServlet" method="post">
-    	<input type="submit" value="放大"> <br>
+    	<input type="submit" style="height:30px;width:100px;font-size:18px;" value="放大"> <br>
     </form>
 	</span>
 </div>
