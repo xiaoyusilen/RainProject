@@ -39,8 +39,8 @@ public class GetNewPositionServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		PositionDao positiondao = new PositionDaoimpl();
 		Time time = positiondao.querytime();
-		int year = Integer.valueOf(time.getYear());
-		int month = Integer.valueOf(time.getMonth());
+		String year = time.getYear();
+		String month = time.getMonth();
 		System.out.println(year);
 		System.out.println(month);
 		List<Position> listPosition = positiondao.selectAll(month,year);

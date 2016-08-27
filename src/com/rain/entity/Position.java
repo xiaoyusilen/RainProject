@@ -117,6 +117,25 @@ public class Position {
 		this.px = px;
 		this.py = py;
 	}
+	public Position(int pno, Double ppv, Double pnv, Double pcod, String month, String year) {
+		super();
+		this.pno = pno;
+		this.ppv = ppv;
+		this.pnv = pnv;
+		this.pcod = pcod;
+		this.month = month;
+		this.year = year;
+	}
+	public Position(int pno, Double ppv, Double pnv, Double pcod,Double pcom, String month, String year) {
+		super();
+		this.pno = pno;
+		this.ppv = ppv;
+		this.pnv = pnv;
+		this.pcod = pcod;
+		this.pcom = pcom;
+		this.month = month;
+		this.year = year;
+	}
 	public Position(int pno, Double ppv,Double pnv,Double pcod) {
 		super();
 		this.pno = pno;

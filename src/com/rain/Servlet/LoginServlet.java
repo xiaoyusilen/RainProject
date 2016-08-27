@@ -43,9 +43,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		doGet(request, response);
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession(); 
+		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username);
@@ -57,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(result);
 		if(result)
 		{
-			response.sendRedirect("index.html");
+			response.sendRedirect("admin.html");
 		}
 		else
 		{

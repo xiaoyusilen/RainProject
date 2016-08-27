@@ -35,10 +35,8 @@ public class GetColorPositionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		int pno = Integer.valueOf(request.getParameter("pno"));
-		String y = request.getParameter("year");
-		int year = Integer.valueOf(y);
-		String m = request.getParameter("month");
-		int month = Integer.valueOf(m);
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
 		System.out.println(year);
 		PositionDao positiondao = new PositionDaoimpl();
 		Position position = positiondao.query(pno);

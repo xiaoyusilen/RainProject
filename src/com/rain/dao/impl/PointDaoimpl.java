@@ -20,6 +20,7 @@ public class PointDaoimpl implements PointDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	
 	public Time querytime(){
 		
 		

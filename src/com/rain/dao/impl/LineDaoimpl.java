@@ -10,7 +10,6 @@ import com.rain.DateSource.ConnectionManager;
 import com.rain.DateSource.SQLManager;
 import com.rain.dao.LineDao;
 import com.rain.entity.line;
-import com.rain.util.DBConnection;
 
 public class LineDaoimpl implements LineDao {
 	

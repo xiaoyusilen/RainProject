@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.rain.util.DBConnection;
 import com.mysql.jdbc.Connection;
 import com.rain.DateSource.ConnectionManager;
 import com.rain.DateSource.SQLManager;
@@ -18,6 +17,59 @@ public class PositionDaoimpl implements PositionDao {
 	ConnectionManager connectionManager = new ConnectionManager();
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
+	
+	public int delete(String pno,String year,String month){
+		String strSQL = "delete from record where pno=? and year=? and month=?";
+		Object[] params = {pno,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		return affectRows;
+	}
+	
+	public int insert(Position position){
+		String strSQL = "insert into record(pno,ppv,pnv,pcod,pcom,year,month) values(?,?,?,?,?,?,?)";
+		int pno = position.getPno();
+		Double ppv = position.getPpv();
+		Double pnv = position.getPnv();
+		Double pcod = position.getPcod();
+		Double pcom = position.getPcom();
+		String year = position.getYear();
+		String month = position.getMonth();
+		Object[] params = {pno,ppv,pnv,pcod,pcom,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		System.out.println(affectRows);
+		return affectRows;
+	}
+	
+	public int update(String pno,String ppv,String pnv,String pcod,String pcom,String year,String month){
+		String strSQL = "update record set ppv=?,pnv=?,pcod=?,pcom=? where pno=? and year=? and month=?";
+		Object[] params={ppv,pnv,pcod,pcom,pno,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		System.out.println(affectRows);
+		connectionManager.closeConnection(connection);
+		return affectRows;
+	}
+	
+	public Position querybyid(String pno,String year,String month){
+		String strSQL = "select * from record where pno=? and year=? and month=?";
+		Object[] params={pno,year,month};
+		ResultSet  rs = sqlManager.execQuery(connection, strSQL, params);
+		Position position = new Position();
+		try {
+			while(rs.next()){
+				position.setPno(rs.getInt(2));
+				position.setPpv(rs.getDouble(3));
+				position.setPnv(rs.getDouble(4));
+				position.setPcod(rs.getDouble(5));
+				position.setPcom(rs.getDouble(6));
+			}
+			return position;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	public Position query(int pno){
 		
@@ -62,7 +114,7 @@ public class PositionDaoimpl implements PositionDao {
 		}
 	}
 	
-	public List<Position> selectAll(int month,int year) {
+	public List<Position> selectAll(String month,String year) {
 		// TODO Auto-generated method stub
 		List<Position> listPosition = new ArrayList<Position>();
 		
