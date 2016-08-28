@@ -9,6 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <error-page>   
+        <error-code>500</error-code>   
+        <location>/error.html</location>   
+  </error-page> 
+  <error-page>   
+        <error-code>404</error-code>   
+        <location>/error.html</location>   
+  </error-page>   
   <resource-ref>
     <res-ref-name>jdbc/rain</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
