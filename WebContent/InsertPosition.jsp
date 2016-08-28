@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form width="300" action="InsertPositionServlet" method="post">
+<form width="300" action="InsertPositionServlet" method="post" name="addpoint" onsubmit="return validate(this);">
 	<table width="300" align="center">
 			<th colspan="8">
 			增加点位信息
@@ -25,16 +25,49 @@
 			<th>操作</th>
 			</tr>
 			<tr>
-			<td><input type="text" name="pno"></td>
-			<td><input type="text" name="ppv"></td>
-			<td><input type="text" name="pnv"></td>
-			<td><input type="text" name="pcod"></td>
-			<td><input type="text" name="pcom"></td>
-			<td><input type="text" name="year"></td>
-			<td><input type="text" name="month"></td>
+			<td><input type="text" name="pno" size="6"></td>
+			<td><input type="text" name="ppv" size="6"></td>
+			<td><input type="text" name="pnv" size="6"></td>
+			<td><input type="text" name="pcod" size="6"></td>
+			<td><input type="text" name="pcom" size="6"></td>
+			<td><input type="text" name="year" size="6"></td>
+			<td><input type="text" name="month" size="6"></td>
 			<td><input type="submit" value="添加"></td>
 			</tr>
 	</table> 
 </form>
+		<script type="text/javascript">
+		function validate(addpoint) {
+			if (addpoint.pno.value == "") {
+				alert("对不起，点位不能为空！");
+				return false;
+			}
+			if (addpoint.ppv.value == "") {
+				alert("对不起，总磷含量不能为空！");
+				return false;
+			}
+			if (addpoint.pnv.value == "") {
+				alert("对不起，氨氮含量不能为空！");
+				return false;
+			}
+			if (addpoint.pcod.value == "") {
+				alert("对不起，COD含量不能为空！");
+				return false;
+			}
+			if (addpoint.pcom.value == "") {
+				alert("对不起，综合指数	不能为空！");
+				return false;
+			}
+			if (addpoint.year.value == "") {
+				alert("对不起，年份不能为空！");
+				return false;
+			}
+			if (addpoint.month.value == "") {
+				alert("对不起，月份不能为空！");
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(result);
 		if(result)
 		{
-			response.sendRedirect("admin.html");
+			response.sendRedirect("indexnew.html");
 		}
 		else
 		{

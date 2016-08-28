@@ -132,6 +132,7 @@
             <li><a href="North.jsp" target="mainFrame">北部水系</a>
         </ul>
     </li>
+    <li><a href="#" onclick="top.location.href='admin.html'">后台管理</a>
         
 
 <script type="text/javascript">

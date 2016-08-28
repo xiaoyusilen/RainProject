@@ -129,6 +129,8 @@
     </li>
     <li>
     <a href="InsertPoint.jsp" target="mainFrame">增加地表水系统数据</a>
+    </li>
+    <li><a href="#" onclick="top.location.href='indexnew.html'">查看前台数据</a>
         
 
 <script type="text/javascript">

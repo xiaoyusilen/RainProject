@@ -11,9 +11,17 @@
 </head>
 <body>
 <%
-	String year = (String)session.getAttribute("year");
-	String month = (String)session.getAttribute("month");
+	int year = (Integer)session.getAttribute("year");
+	int month = (Integer)session.getAttribute("month");
 %>
+<script language="javascript">
+	var success='<%=session.getAttribute("success")%>';
+	if(success=="1")
+	{
+		alert("No Data!");
+		<%session.removeAttribute("success");%>
+	}
+</script>
 <table width="700" align="center">
 			<th colspan="13">
 			<%out.println(year); %> 年<%out.println(month); %>月点位数据信息

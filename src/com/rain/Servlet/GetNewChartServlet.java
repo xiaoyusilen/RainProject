@@ -49,10 +49,6 @@ public class GetNewChartServlet extends HttpServlet {
 			request.getSession().setAttribute("month", month);
 			response.sendRedirect("ShowData.jsp");
 		}
-		else
-		{
-			out.print("<script language='javascript'>alert('No Data!');window.location.href='GetNewPositionServlet';</script>");
-		}
 	}
 
 	/**

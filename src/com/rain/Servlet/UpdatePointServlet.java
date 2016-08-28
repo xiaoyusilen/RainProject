@@ -1,9 +1,6 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,20 +11,18 @@ import com.rain.dao.PointDao;
 import com.rain.dao.PositionDao;
 import com.rain.dao.impl.PointDaoimpl;
 import com.rain.dao.impl.PositionDaoimpl;
-import com.rain.entity.Point;
-import com.rain.entity.Position;
 
 /**
- * Servlet implementation class GetNewPointChartServlet
+ * Servlet implementation class UpdatePointServlet
  */
-@WebServlet("/GetNewPointChartServlet")
-public class GetNewPointChartServlet extends HttpServlet {
+@WebServlet("/UpdatePointServlet")
+public class UpdatePointServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetNewPointChartServlet() {
+    public UpdatePointServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,23 +33,29 @@ public class GetNewPointChartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter out = response.getWriter();
+		String year = (String)request.getSession().getAttribute("year");
+		String month = (String)request.getSession().getAttribute("month");
+		String pno = (String)request.getSession().getAttribute("pno");
+		String rph = (String)request.getParameter("rph");
+		String rnh = (String)request.getParameter("rnh");
+		String rkm = (String)request.getParameter("rkm");
+		String rcod = (String)request.getParameter("rcod");
+		String rdo = (String)request.getParameter("rdo");
+		String rbod = (String)request.getParameter("rbod");
+		String rwt = (String)request.getParameter("rwt");
+		String rxf = (String)request.getParameter("rxf");
+		String ryls = (String)request.getParameter("ryls");
+		String rtn = (String)request.getParameter("rtn");
+		String rtp = (String)request.getParameter("rtp");
 		PointDao pointdao = new PointDaoimpl();
-		String y = (String)request.getParameter("year");
-		int year = Integer.valueOf(y);
-		String m = (String)request.getParameter("month");
-		int month = Integer.valueOf(m);
-		System.out.println(year+month);
-		List<Point> listChart = pointdao.selectAll(year,month);
-		if (listChart.size()>0) {
-			request.getSession().setAttribute("listChart", listChart);
-			request.getSession().setAttribute("year", y);
-			request.getSession().setAttribute("month",m);
-			response.sendRedirect("ShowDataNew.jsp");
-		}
-		else
+		int affectrow = pointdao.update(pno, rph, rnh, rkm, rcod, rdo, rbod, rwt, rxf, ryls, rtp, rtn, year, month);
+		if(affectrow>0)
 		{
-			request.getSession().setAttribute("success", 1);
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
+			response.sendRedirect("QueryBackPointNewServlet");
+		}
+		else{
 			response.sendRedirect("GetNNewPointServlet");
 		}
 	}

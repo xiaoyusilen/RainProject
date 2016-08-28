@@ -159,6 +159,24 @@ public class Point {
 		this.year = year;
 		this.month = month;
 	}
+	public Point(int pno, Double rph, Double rnh, Double rkm, Double rcod, Double rdo, Double rbod, Double rwt,
+			Double rxf, Double ryls, Double rtn, Double rtp, int year, int month) {
+		super();
+		this.pno = pno;
+		this.rph = rph;
+		this.rnh = rnh;
+		this.rkm = rkm;
+		this.rcod = rcod;
+		this.rdo = rdo;
+		this.rbod = rbod;
+		this.rwt = rwt;
+		this.rxf = rxf;
+		this.ryls = ryls;
+		this.rtn = rtn;
+		this.rtp = rtp;
+		this.year = year;
+		this.month = month;
+	}
 	public Point() {
 		super();
 		// TODO Auto-generated constructor stub

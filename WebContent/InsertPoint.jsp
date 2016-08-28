@@ -9,9 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form width="300" action="InsertPointServlet" method="post">
+<form name="addpoint" width="300" action="InsertPointServlet" method="post" onsubmit="return validate(this);">
 	<table width="300px" align="center">
-			<th width=300 colspan="14">
+			<th width=300 colspan="15">
 			增加点位信息
 			</th><br>
 			<tr>
@@ -32,23 +32,40 @@
 			<th width=90>操作</th>
 			</tr>
 			<tr>
-			<td width=90><input type="text" name="pno"></td>
-			<td width=90><input type="text" name="rph"></td>
-			<td width=90><input type="text" name="rnh"></td>
-			<td width=90><input type="text" name="rkm"></td>
-			<td width=90><input type="text" name="rcod"></td>
-			<td width=90><input type="text" name="rdo"></td>
-			<td width=90><input type="text" name="rbod"></td>
-			<td width=90><input type="text" name="rwt"></td>
-			<td width=90><input type="text" name="rxf"></td>
-			<td width=90><input type="text" name="ryls"></td>
-			<td width=90><input type="text" name="rtn"></td>
-			<td width=90><input type="text" name="rtp"></td>
-			<td width=90><input type="text" name="year"></td>
-			<td width=90><input type="text" name="month"></td>
+			<td><input type="text" name="pno" size="6"></td>
+			<td><input type="text" name="rph" size="6"></td>
+			<td><input type="text" name="rnh" size="6"></td>
+			<td><input type="text" name="rkm" size="10"></td>
+			<td><input type="text" name="rcod" size="6"></td>
+			<td><input type="text" name="rdo" size="6"></td>
+			<td><input type="text" name="rbod" size="6"></td>
+			<td><input type="text" name="rwt" size="6"></td>
+			<td><input type="text" name="rxf" size="6"></td>
+			<td><input type="text" name="ryls" size="6"></td>
+			<td><input type="text" name="rtn" size="6"></td>
+			<td><input type="text" name="rtp" size="6"></td>
+			<td><input type="text" name="year" size="6"></td>
+			<td><input type="text" name="month" size="6"></td>
 			<td><input type="submit" value="添加"></td>
 			</tr>
 	</table> 
 </form>
+		<script type="text/javascript">
+		function validate(addpoint) {
+			if (addpoint.pno.value == "") {
+				alert("对不起，点位不能为空！");
+				return false;
+			}
+			if (addpoint.year.value == "") {
+				alert("对不起，年份不能为空！");
+				return false;
+			}
+			if (addpoint.month.value == "") {
+				alert("对不起，月份不能为空！");
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>

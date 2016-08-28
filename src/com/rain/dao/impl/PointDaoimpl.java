@@ -20,6 +20,76 @@ public class PointDaoimpl implements PointDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	public int delete(String pno,String year,String month)
+	{
+		String strSQL = "delete from pointrecord where pno=? and year=? and month=?";
+		Object[] params = {pno,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		return affectRows;
+	}
+	
+	public int update(String pno,String rph,String rnh,String rkm,String rcod,String rdo,String rbod,String rwt,String rxf,String ryls,String rtp,String rtn,String year,String month){
+		
+		String strSQL = "update pointrecord set rph=?,rnh=?,rkm=?,rcod=?,rdo=?,rbod=?,rwt=?,rxf=?,ryls=?,rtn=?,rtp=? where pno=? and year=? and month=?";
+		Object[] params={rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,pno,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		System.out.println(affectRows);
+		connectionManager.closeConnection(connection);
+		return affectRows;
+	}
+	
+	public Point querybyid(String pno,String year,String month){
+		String strSQL = "select * from pointrecord where pno=? and year=? and month=?";
+		Object[] params={pno,year,month};
+		ResultSet  rs = sqlManager.execQuery(connection, strSQL, params);
+		Point point = new Point();
+		try {
+			while(rs.next()){
+				point.setPno(rs.getInt(2));
+				point.setRph(rs.getDouble(3));
+				point.setRnh(rs.getDouble(4));
+				point.setRkm(rs.getDouble(5));
+				point.setRcod(rs.getDouble(6));
+				point.setRdo(rs.getDouble(7));
+				point.setRbod(rs.getDouble(8));
+				point.setRwt(rs.getDouble(9));
+				point.setRxf(rs.getDouble(10));
+				point.setRyls(rs.getDouble(11));
+				point.setRtn(rs.getDouble(12));
+				point.setRtp(rs.getDouble(13));
+				point.setYear(rs.getInt(13));
+				point.setMonth(rs.getInt(14));
+			}
+			return point;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	public int insert(Point point){
+		String strSQL = "insert into pointrecord(pno,rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,year,month) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		int pno = point.getPno();
+		Double rph = point.getRph();
+		Double rnh = point.getRnh();
+		Double rkm = point.getRkm();
+		Double rcod = point.getRcod();
+		Double rdo = point.getRdo();
+		Double rbod = point.getRbod();
+		Double rwt = point.getRwt();
+		Double rxf = point.getRxf();
+		Double ryls = point.getRyls();
+		Double rtn = point.getRtn();
+		Double rtp = point.getRtp();
+		int year = point.getYear();
+		int month = point.getMonth();
+		Object[] params = {pno,rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,year,month};
+		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
+		System.out.println(affectRows);
+		return affectRows;
+	}
 	
 	public Time querytime(){
 		
