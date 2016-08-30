@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
 <center><img src="images/North.png" border="0" usemap="#Map"></center>
 <map name="Map">
   <area shape="rect" coords="0,55,542,102" href="choose.jsp?t=n1" target="_self">

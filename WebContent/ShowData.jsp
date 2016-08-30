@@ -11,6 +11,10 @@
 </head>
 <body>
 <%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
+<%
 	String year = (String)session.getAttribute("year");
 	String month = (String)session.getAttribute("month");
 %>

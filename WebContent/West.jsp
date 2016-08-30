@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
 <center><img src="images/West.png" border="0" usemap="#Map"></center>
 <map name="Map">
 </map>

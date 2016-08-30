@@ -23,6 +23,10 @@
 </style>
 </head>
 <body>
+<%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
 <div class="div3">
 <span id="lbresult"> 
 <img src="images/5.png" width="1324" height="908" usemap="#Map" border="0" />

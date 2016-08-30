@@ -8,6 +8,10 @@
 </head>
 <body>
 <%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
+<%
 	String t=request.getParameter("t");
 %>
 <script language="javascript">

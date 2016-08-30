@@ -16,6 +16,10 @@
 <script language="javascript" type="text/javascript" src="js/public.js"></script>
 </head>
 <body> 
+<%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
 <script language="javascript">
 	var success='<%=session.getAttribute("success")%>';
 	if(success=="1")

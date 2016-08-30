@@ -9,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+		if(session.getAttribute("username")==null)
+			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
+%>
 <form width="300" action="InsertPositionServlet" method="post" name="addpoint" onsubmit="return validate(this);">
 	<table width="300" align="center">
 			<th colspan="8">
