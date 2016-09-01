@@ -4,10 +4,14 @@
 <html>
 <head>
 <title>空港经济区排水管网水质数据管理系统 </title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap-combined.min.css" type="text/css" />
 <style type="text/css">
 .ss{
-	margin:15% 30% 30% 35%;
+	margin:15% 30% 15% 30%;
 }
 .title{
 	background-color:#333;
@@ -44,7 +48,7 @@
 				</div>
 				<div class="control-group">
 					<div class="controls">
-						<button class="btn" type="submit">登陆</button>
+						<button class="btn" type="submit">登录</button>
 					</div>
 				</div>
 			</form>
