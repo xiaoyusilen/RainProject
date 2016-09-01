@@ -36,20 +36,20 @@
 			<th width=90>操作</th>
 			</tr>
 			<tr>
-			<td><input type="text" name="pno" size="6"></td>
-			<td><input type="text" name="rph" size="6"></td>
-			<td><input type="text" name="rnh" size="6"></td>
+			<td><input type="text" name="pno" size="3"></td>
+			<td><input type="text" name="rph" size="3"></td>
+			<td><input type="text" name="rnh" size="4"></td>
 			<td><input type="text" name="rkm" size="10"></td>
-			<td><input type="text" name="rcod" size="6"></td>
-			<td><input type="text" name="rdo" size="6"></td>
-			<td><input type="text" name="rbod" size="6"></td>
-			<td><input type="text" name="rwt" size="6"></td>
-			<td><input type="text" name="rxf" size="6"></td>
-			<td><input type="text" name="ryls" size="6"></td>
-			<td><input type="text" name="rtn" size="6"></td>
-			<td><input type="text" name="rtp" size="6"></td>
-			<td><input type="text" name="year" size="6"></td>
-			<td><input type="text" name="month" size="6"></td>
+			<td><input type="text" name="rcod" size="5"></td>
+			<td><input type="text" name="rdo" size="5"></td>
+			<td><input type="text" name="rbod" size="5"></td>
+			<td><input type="text" name="rwt" size="5"></td>
+			<td><input type="text" name="rxf" size="5"></td>
+			<td><input type="text" name="ryls" size="5"></td>
+			<td><input type="text" name="rtn" size="5"></td>
+			<td><input type="text" name="rtp" size="5"></td>
+			<td><input type="text" name="year" size="5"></td>
+			<td><input type="text" name="month" size="5"></td>
 			<td><input type="submit" value="添加"></td>
 			</tr>
 	</table> 

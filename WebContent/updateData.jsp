@@ -22,7 +22,7 @@
 	session.setAttribute("pno",pno);
 %>
 <form action="UpdatePositionNextServlet" method="post">
-	<table width="600" width="600" align="center">
+	<table width="800" align="center">
 			<th colspan="6">
 			<%out.println(year); %>年<%out.println(month); %>月<%out.println(pno); %>点位数据信息
 			</th><br>
