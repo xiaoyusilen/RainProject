@@ -35,7 +35,7 @@ public class GetChartServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		PositionDao positiondao = new PositionDaoimpl();
 		String year = request.getParameter("year");
@@ -49,8 +49,7 @@ public class GetChartServlet extends HttpServlet {
 		}
 		else
 		{
-			request.getSession().setAttribute("success", 1);
-			response.sendRedirect("GetNewChartServlet");
+			out.print("<script type='text/javascript'>alert('No Data!');window.location.href='GetNewChartServlet';</script>");
 		}
 	}
 

@@ -18,14 +18,14 @@
 	String year = (String)session.getAttribute("year");
 	String month = (String)session.getAttribute("month");
 %>
-<script language="javascript">
+<!-- <script language="javascript">
 	var success='<%=session.getAttribute("success")%>';
 	if(success=="1")
 	{
 		alert("No Data!");
 		<%session.removeAttribute("success");%>
 	}
-</script>
+</script> -->
 <table width="400" align="center">
 			<th colspan="6">
 			<%out.println(year); %>年<%out.println(month); %>月点位数据信息
