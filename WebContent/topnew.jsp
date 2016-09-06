@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>空港经济区排水管网水质数据后台管理系统 </title>
+<title>空港经济区排水管网数据后台管理系统 </title>
 <style type="text/css">
 body{
 	background:#333;
@@ -17,6 +17,6 @@ body{
 </style>
 </head>
 <body>
-空港经济区排水管网水质数据后台管理系统
+空港经济区排水管网数据后台管理系统
 </body>
 </html>
