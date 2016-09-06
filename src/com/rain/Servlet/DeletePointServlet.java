@@ -1,6 +1,8 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +34,11 @@ public class DeletePointServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String pno = (String)request.getParameter("pno");
 		String year = (String)request.getParameter("year");
 		String month = (String)request.getParameter("month");
@@ -40,6 +46,7 @@ public class DeletePointServlet extends HttpServlet {
 		pointdao.delete(pno, year, month);
 		request.getSession().setAttribute("year", year);
 		request.getSession().setAttribute("month", month);
+		//out.print("<script>alert('删除成功');location.href('QueryBackPointNewServlet');</script>");
 		response.sendRedirect("QueryBackPointNewServlet");
 	}
 

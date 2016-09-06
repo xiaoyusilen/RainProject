@@ -34,7 +34,10 @@ public class GetPointServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
 		PrintWriter out = response.getWriter();
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
@@ -50,7 +53,8 @@ public class GetPointServlet extends HttpServlet {
 		}
 		else
 		{
-			response.sendRedirect("GetNewPointServlet");
+			out.print("<script language='javascript'>alert('没有数据！');window.location.href='GetNewPointServlet';</script>");
+			//response.sendRedirect("GetNewPointServlet");
 		}
 	}
 

@@ -1,6 +1,8 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +33,7 @@ public class InsertPointServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -39,7 +41,11 @@ public class InsertPointServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String p = (String)request.getParameter("pno");
 		int pno = Integer.valueOf(p);
 		String r1 = (String)request.getParameter("rph");
@@ -128,10 +134,12 @@ public class InsertPointServlet extends HttpServlet {
 		Point point = new Point(pno,rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,year,month);
 		PointDao pointdao = new PointDaoimpl();
 		int affectrow = pointdao.insert(point);
+		System.out.println(affectrow);
 		if(affectrow!=-1)
 		{
 			request.getSession().setAttribute("year", y);
 			request.getSession().setAttribute("month", m);
+			//out.print("<script>alert('添加成功！');window.location.href('QueryBackPointNewServlet');</script>");
 			response.sendRedirect("QueryBackPointNewServlet");
 		}
 		

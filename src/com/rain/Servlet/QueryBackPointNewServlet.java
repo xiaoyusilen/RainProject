@@ -38,7 +38,7 @@ public class QueryBackPointNewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		PointDao pointdao = new PointDaoimpl();
 		HttpSession session = request.getSession(); 
@@ -46,6 +46,7 @@ public class QueryBackPointNewServlet extends HttpServlet {
 		String m = (String) session.getAttribute("month");
 		int year = Integer.valueOf(y);
 		int month = Integer.valueOf(m);
+		System.out.println(year+month);
 		List<Point> listChart = pointdao.selectAll(year, month);
 		if(listChart.size()>0)
 		{

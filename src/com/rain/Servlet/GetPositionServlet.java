@@ -32,10 +32,11 @@ public class GetPositionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		@SuppressWarnings("unused")
-		PrintWriter out = response.getWriter();
+		//@SuppressWarnings("unused")
+		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
 		PositionDao positiondao = new PositionDaoimpl();
@@ -48,7 +49,7 @@ public class GetPositionServlet extends HttpServlet {
 		}
 		else
 		{
-			out.print("<script language='javascript'>alert('No Data!');window.location.href='GetNewPositionServlet';</script>");
+			out.print("<script language='javascript'>alert('没有数据！');window.location.href='GetNewPositionServlet';</script>");
 		}
 	}
 

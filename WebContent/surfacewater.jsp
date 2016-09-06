@@ -20,14 +20,6 @@
 		if(session.getAttribute("username")==null)
 			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
 %>
-<script language="javascript">
-	var success='<%=session.getAttribute("success")%>';
-	if(success=="1")
-	{
-		alert("No Data!");
-		<%session.removeAttribute("success");%>
-	}
-</script>
 <span id="lbresult"> 
 <img src="images/4.png" width="726.1" height="487.07" usemap="#Map" border="0" />
   <map name="Map" id="Map">
