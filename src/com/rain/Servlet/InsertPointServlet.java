@@ -132,14 +132,19 @@ public class InsertPointServlet extends HttpServlet {
 			rxf = Double.valueOf(r11);
 		Point point = new Point(pno,rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,year,month);
 		PointDao pointdao = new PointDaoimpl();
-		int affectrow = pointdao.insert(point);
-		System.out.println(affectrow);
-		if(affectrow>0)
-		{
-			request.getSession().setAttribute("year", y);
-			request.getSession().setAttribute("month", m);
-			out.print("<script>alert('添加成功');window.location.href=('QueryBackPointNewServlet');</script>");
-			//response.sendRedirect("QueryBackPointNewServlet");
+		int po = pointdao.querybyId(p, y, m);
+		if(po==1){
+			out.print("<script>alert('该点已存在');window.location.href=('InsertPoint.jsp');</script>");
+		}
+		else{
+			int affectrow = pointdao.insert(point);
+			if(affectrow>0)
+			{
+				request.getSession().setAttribute("year", y);
+				request.getSession().setAttribute("month", m);
+				out.print("<script>alert('添加成功');window.location.href=('QueryBackPointNewServlet');</script>");
+				//response.sendRedirect("QueryBackPointNewServlet");
+			}
 		}
 		
 	}

@@ -14,5 +14,6 @@ public interface PointDao {
 	public Point querybyid(String pno,String year,String month);
 	public int update(String pno,String rph,String rnh,String rkm,String rcod,String rdo,String rbod,String rwt,String rxf,String ryls,String rtp,String rtn,String year,String month);
 	public int delete(String pno,String year,String month);
+	public int querybyId(String pno,String year,String month);
 	
 }

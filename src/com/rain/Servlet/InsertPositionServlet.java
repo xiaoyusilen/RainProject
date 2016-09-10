@@ -60,18 +60,25 @@ public class InsertPositionServlet extends HttpServlet {
 		Double pcom = Double.valueOf(p4);
 		Position position = new Position(pno,ppv,pnv,pcod,pcom,month,year);
 		PositionDao positiondao = new PositionDaoimpl();
-		int affectrow = positiondao.insert(position);
-		if(affectrow>0)
-		{
-			request.getSession().setAttribute("year", year);
-			request.getSession().setAttribute("month", month);
-			out.print("<script>alert('添加成功');window.location.href=('QueryBackServlet');</script>");
-			//response.sendRedirect("QueryBackServlet");
+		int po = positiondao.querybyId(p, year, month);
+		System.out.println(po);
+		if(po==1){
+			out.print("<script>alert('该点已存在');window.location.href=('InsertPosition.jsp');</script>");
 		}
-		else
-		{
-			out.print("<script>alert('添加失败');window.location.href=('GetNewChartServlet');</script>");
+		else{
+			int affectrow = positiondao.insert(position);
+			if(affectrow>0)
+			{
+				request.getSession().setAttribute("year", year);
+				request.getSession().setAttribute("month", month);
+				out.print("<script>alert('添加成功');window.location.href=('QueryBackServlet');</script>");
+			//response.sendRedirect("QueryBackServlet");
+			}
+			else
+			{
+				out.print("<script>alert('添加失败');window.location.href=('GetNewChartServlet');</script>");
 			//response.sendRedirect("GetNewChartServlet");
+			}
 		}
 		
 	}

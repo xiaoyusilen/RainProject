@@ -29,14 +29,14 @@
 			<th>操作</th>
 			</tr>
 			<tr>
-			<td><input type="text" name="pno" size="6"></td>
-			<td><input type="text" name="ppv" size="6"></td>
-			<td><input type="text" name="pnv" size="6"></td>
-			<td><input type="text" name="pcod" size="6"></td>
-			<td><input type="text" name="pcom" size="6"></td>
-			<td><input type="text" name="year" size="6"></td>
-			<td><input type="text" name="month" size="6"></td>
-			<td><input type="submit" value="添加"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="pno" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="ppv" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="pnv" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="pcod" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="pcom" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="year" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="text" name="month" size="6"></td>
+			<td><input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" type="submit" value="添加"></td>
 			</tr>
 	</table> 
 </form>

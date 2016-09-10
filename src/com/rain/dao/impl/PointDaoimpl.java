@@ -20,6 +20,22 @@ public class PointDaoimpl implements PointDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	public int querybyId(String pno,String year,String month){
+		String strSQL = "select * from pointrecord where pno=? and year=? and month=?";
+		Object[] params={pno,year,month};
+		ResultSet  rs = sqlManager.execQuery(connection, strSQL, params);
+		Point point = new Point();
+		try {
+			if(rs.next()){
+				return 1;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
 	public int delete(String pno,String year,String month)
 	{
 		String strSQL = "delete from pointrecord where pno=? and year=? and month=?";

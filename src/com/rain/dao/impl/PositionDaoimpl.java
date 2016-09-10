@@ -18,6 +18,21 @@ public class PositionDaoimpl implements PositionDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	public int querybyId(String pno,String year,String month){
+		String strSQL = "select * from record where pno=? and year=? and month=?";
+		Object[] params={pno,year,month};
+		ResultSet  rs = sqlManager.execQuery(connection, strSQL, params);
+		try {
+			if(rs.next()){
+				return 1;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
 	public int delete(String pno,String year,String month){
 		String strSQL = "delete from record where pno=? and year=? and month=?";
 		Object[] params = {pno,year,month};
