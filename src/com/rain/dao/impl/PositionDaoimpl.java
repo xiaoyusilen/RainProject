@@ -51,7 +51,6 @@ public class PositionDaoimpl implements PositionDao {
 		String month = position.getMonth();
 		Object[] params = {pno,ppv,pnv,pcod,pcom,year,month};
 		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
-		System.out.println(affectRows);
 		return affectRows;
 	}
 	
@@ -59,7 +58,6 @@ public class PositionDaoimpl implements PositionDao {
 		String strSQL = "update record set ppv=?,pnv=?,pcod=?,pcom=? where pno=? and year=? and month=?";
 		Object[] params={ppv,pnv,pcod,pcom,pno,year,month};
 		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
-		System.out.println(affectRows);
 		connectionManager.closeConnection(connection);
 		return affectRows;
 	}

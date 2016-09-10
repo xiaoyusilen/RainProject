@@ -47,7 +47,6 @@ public class GetNewPointChartServlet extends HttpServlet {
 		int year = Integer.valueOf(y);
 		String m = (String)request.getParameter("month");
 		int month = Integer.valueOf(m);
-		System.out.println(year+month);
 		List<Point> listChart = pointdao.selectAll(year,month);
 		if (listChart.size()>0) {
 			request.getSession().setAttribute("listChart", listChart);

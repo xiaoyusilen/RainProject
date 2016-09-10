@@ -44,8 +44,6 @@ public class GetNewPointServlet extends HttpServlet {
 		Time time =pointdao.querytime();
 		int year = Integer.valueOf(time.getYear());
 		int month = Integer.valueOf(time.getMonth());
-		System.out.println(year);
-		System.out.println(month);
 		List<Point> listPoint = pointdao.selectAll(year,month);
 		if (listPoint != null) {
 			request.getSession().setAttribute("listPoint", listPoint);

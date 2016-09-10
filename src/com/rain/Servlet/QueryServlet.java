@@ -48,8 +48,6 @@ public class QueryServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
 		PrintWriter out = response.getWriter();
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
 		String a = request.getParameter("year");
 		String b = request.getParameter("month");
 		String c = request.getParameter("type");
@@ -64,7 +62,6 @@ public class QueryServlet extends HttpServlet {
 		
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.query(year,month,c,d,view);
-		System.out.println(listPosition.size());
 		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			session.setAttribute("size",listPosition.size());

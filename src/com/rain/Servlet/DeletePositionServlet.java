@@ -40,7 +40,6 @@ public class DeletePositionServlet extends HttpServlet {
 		String pno = (String)request.getParameter("pno");
 		String year = (String)request.getParameter("year");
 		String month = (String)request.getParameter("month");
-		System.out.println(pno+year+month);
 		PositionDao positiondao = new PositionDaoimpl();
 		int affectRow = positiondao.delete(pno, year, month);
 		if(affectRow!=-1){

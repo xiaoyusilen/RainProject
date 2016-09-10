@@ -38,7 +38,6 @@ public class FDServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); 
 		String year = (String)request.getSession().getAttribute("year");
 		String month = (String)request.getSession().getAttribute("month");
-		System.out.println("FD"+year);
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.selectAll(month,year);
 		if (listPosition.size()>0) {

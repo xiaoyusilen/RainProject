@@ -130,7 +130,11 @@
     <li>
     <a href="InsertPoint.jsp" target="mainFrame">增加地表水系统数据</a>
     </li>
+    <li>
+    <a href="modify.jsp" target="mainFrame">修改登录密码</a>
+    </li>
     <li><a href="#" onclick="top.location.href='indexnew.html'">查看前台数据</a>
+    <li><a href="#" onclick="top.location.href='cancel.jsp'">注销</a>
         
 
 <script type="text/javascript">

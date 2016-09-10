@@ -4,5 +4,6 @@ import com.rain.entity.User;
 
 public interface UserDao {
 
-	boolean LoginValidate(User user);
+	public boolean LoginValidate(User user);
+	public int modify(String pass,String oldpass);
 }

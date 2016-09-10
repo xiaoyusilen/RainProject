@@ -49,7 +49,6 @@ public class PointDaoimpl implements PointDao {
 		String strSQL = "update pointrecord set rph=?,rnh=?,rkm=?,rcod=?,rdo=?,rbod=?,rwt=?,rxf=?,ryls=?,rtn=?,rtp=? where pno=? and year=? and month=?";
 		Object[] params={rph,rnh,rkm,rcod,rdo,rbod,rwt,rxf,ryls,rtn,rtp,pno,year,month};
 		int affectRows = sqlManager.execUpdate(connection, strSQL, params);
-		System.out.println(affectRows);
 		connectionManager.closeConnection(connection);
 		return affectRows;
 	}

@@ -53,7 +53,6 @@ public class GetLineServlet extends HttpServlet implements Servlet {
 		String type = request.getParameter("type");
 		LineDaoimpl linedao = new LineDaoimpl();
 		List<line> listLine = linedao.selectAll(no,type);
-		System.out.println(listLine.size());
 	    //设置返回时的编码格式
 	    response.setContentType("text/html; charset=utf-8");
 		ArrayList<Double> time = new ArrayList();

@@ -46,7 +46,6 @@ public class QueryBackPointNewServlet extends HttpServlet {
 		String m = (String) session.getAttribute("month");
 		int year = Integer.valueOf(y);
 		int month = Integer.valueOf(m);
-		System.out.println(year+month);
 		List<Point> listChart = pointdao.selectAll(year, month);
 		if(listChart.size()>0)
 		{

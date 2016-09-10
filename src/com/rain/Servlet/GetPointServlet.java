@@ -39,8 +39,6 @@ public class GetPointServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
 		PrintWriter out = response.getWriter();
-		response.setCharacterEncoding("UTF-8");
-		request.setCharacterEncoding("UTF-8"); 
 		String y = request.getParameter("year");
 		int year = Integer.valueOf(y);
 		String m = request.getParameter("month");

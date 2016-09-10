@@ -36,10 +36,8 @@ public class GetLargePositionServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		int year = Integer.valueOf((String)request.getSession().getAttribute("year"));
 		int month = Integer.valueOf((String)request.getSession().getAttribute("month"));
-		System.out.println(year+month);
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.selectLargeAll(month,year);
-		System.out.println(listPosition.size());
 		if (listPosition.size()>0) {
 			request.getSession().setAttribute("listPosition", listPosition);
 			request.getSession().setAttribute("year", year);

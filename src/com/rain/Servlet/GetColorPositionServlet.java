@@ -37,7 +37,6 @@ public class GetColorPositionServlet extends HttpServlet {
 		int pno = Integer.valueOf(request.getParameter("pno"));
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
-		System.out.println(year);
 		PositionDao positiondao = new PositionDaoimpl();
 		Position position = positiondao.query(pno);
 		List<Position> listPosition = positiondao.selectAll(month, year);
