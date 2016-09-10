@@ -1,6 +1,8 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +41,11 @@ public class InsertPositionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String p = (String)request.getParameter("pno");
 		int pno = Integer.valueOf(p);
 		String year = (String)request.getParameter("year");
@@ -51,7 +57,6 @@ public class InsertPositionServlet extends HttpServlet {
 		String p3 = (String)request.getParameter("pcod");
 		Double pcod = Double.valueOf(p3);
 		String p4 = (String)request.getParameter("pcom");
-		System.out.println(p4);
 		Double pcom = Double.valueOf(p4);
 		Position position = new Position(pno,ppv,pnv,pcod,pcom,month,year);
 		PositionDao positiondao = new PositionDaoimpl();
@@ -60,11 +65,13 @@ public class InsertPositionServlet extends HttpServlet {
 		{
 			request.getSession().setAttribute("year", year);
 			request.getSession().setAttribute("month", month);
-			response.sendRedirect("QueryBackServlet");
+			out.print("<script>alert('添加成功');window.location.href=('QueryBackServlet');</script>");
+			//response.sendRedirect("QueryBackServlet");
 		}
 		else
 		{
-			response.sendRedirect("GetNewChartServlet");
+			out.print("<script>alert('添加失败');window.location.href=('GetNewChartServlet');</script>");
+			//response.sendRedirect("GetNewChartServlet");
 		}
 		
 	}

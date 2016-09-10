@@ -43,11 +43,13 @@ public class DeletePointServlet extends HttpServlet {
 		String year = (String)request.getParameter("year");
 		String month = (String)request.getParameter("month");
 		PointDao pointdao = new PointDaoimpl();
-		pointdao.delete(pno, year, month);
-		request.getSession().setAttribute("year", year);
-		request.getSession().setAttribute("month", month);
-		//out.print("<script>alert('删除成功');location.href('QueryBackPointNewServlet');</script>");
-		response.sendRedirect("QueryBackPointNewServlet");
+		int affectrow = pointdao.delete(pno, year, month);
+		if(affectrow > 0){
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
+			out.print("<script>alert('删除成功');window.location.href=('QueryBackPointNewServlet');</script>");
+		}
+		//response.sendRedirect("QueryBackPointNewServlet");
 	}
 
 	/**

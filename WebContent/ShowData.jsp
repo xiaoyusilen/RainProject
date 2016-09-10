@@ -45,9 +45,19 @@
 				<td>${position.pnv }</td>
 				<td>${position.pcod }</td>
 				<td>${position.pcom }</td>
-				<td><a href="UpdatePositionServlet?pno=${position.pno }&&month=<%=month%>&&year=<%=year%>">修改</a>&nbsp;<a href="DeletePositionServlet?pno=${position.pno }&&month=<%=month%>&&year=<%=year%>">删除</a></td>
+				<td><a href="UpdatePositionServlet?pno=${position.pno }&&month=<%=month%>&&year=<%=year%>">修改</a>&nbsp;<a href="DeletePositionServlet?pno=${position.pno }&&month=<%=month%>&&year=<%=year%>" onclick="javascript:return p_del()">删除</a></td>
 				</tr>
 			</c:forEach>
 </table>
+	<script type="text/javascript">
+		function p_del() {
+			var msg = "确认删除";
+			if (confirm(msg) == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>

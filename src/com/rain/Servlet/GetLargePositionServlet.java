@@ -33,9 +33,10 @@ public class GetLargePositionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		int year = (Integer)request.getSession().getAttribute("year");
-		int month = (Integer)request.getSession().getAttribute("month");
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		int year = Integer.valueOf((String)request.getSession().getAttribute("year"));
+		int month = Integer.valueOf((String)request.getSession().getAttribute("month"));
+		System.out.println(year+month);
 		PositionDao positiondao = new PositionDaoimpl();
 		List<Position> listPosition = positiondao.selectLargeAll(month,year);
 		System.out.println(listPosition.size());

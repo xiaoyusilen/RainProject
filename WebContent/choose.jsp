@@ -12,16 +12,8 @@
 			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
 %>
 <%
-	String t=request.getParameter("t");
+	String t=(String)request.getParameter("t");
 %>
-<script language="javascript">
-	var success='<%=session.getAttribute("success")%>';
-	if(success=="1")
-	{
-		alert("No Data!");
-		<%session.removeAttribute("success");%>
-	}
-</script>
 <form style="float:left" action="GetSXServlet?t=<%=t %>"  method="post">
 	<br>
 	年份：

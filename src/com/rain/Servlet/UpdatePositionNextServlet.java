@@ -1,6 +1,8 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +34,11 @@ public class UpdatePositionNextServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		HttpSession session=request.getSession();
 		String year = (String)request.getSession().getAttribute("year");
 		String month = (String)request.getSession().getAttribute("month");
@@ -47,11 +53,11 @@ public class UpdatePositionNextServlet extends HttpServlet {
 		{
 			request.getSession().setAttribute("year", year);
 			request.getSession().setAttribute("month", month);
-			response.sendRedirect("QueryBackServlet");
+			out.print("<script>alert('修改成功');window.location.href=('QueryBackServlet');</script>");
 		}
 		else
 		{
-			response.sendRedirect("GetNewChartServlet");
+			out.print("<script>alert('修改失败');window.location.href=('GetNewChartServlet');</script>");
 		}
 	}
 

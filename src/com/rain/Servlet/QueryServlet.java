@@ -35,7 +35,7 @@ public class QueryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -44,6 +44,10 @@ public class QueryServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		String a = request.getParameter("year");
@@ -53,7 +57,6 @@ public class QueryServlet extends HttpServlet {
 		session.setAttribute("type",c);
 		String d = request.getParameter("way");
 		String e = request.getParameter("view");
-		PrintWriter out = response.getWriter();
 		
 		int year = Integer.valueOf(a);
 		int month = Integer.valueOf(b);
@@ -69,8 +72,8 @@ public class QueryServlet extends HttpServlet {
 		}
 		else
 		{
-			request.getSession().setAttribute("success", 1);
-			response.sendRedirect("query.jsp");
+			out.print("<script>alert('没有数据');window.location.href=('query.jsp');</script>");
+			//response.sendRedirect("query.jsp");
 		}
 		
 	}

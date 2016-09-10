@@ -42,11 +42,14 @@ public class DeletePositionServlet extends HttpServlet {
 		String month = (String)request.getParameter("month");
 		System.out.println(pno+year+month);
 		PositionDao positiondao = new PositionDaoimpl();
-		positiondao.delete(pno, year, month);
-		request.getSession().setAttribute("year", year);
-		request.getSession().setAttribute("month", month);
-		out.print("<script>alert('删除成功')</script>");
-		response.sendRedirect("QueryBackServlet");
+		int affectRow = positiondao.delete(pno, year, month);
+		if(affectRow!=-1){
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
+			out.print("<script>alert('删除成功');window.location.href=('QueryBackServlet');</script>");
+		}
+		
+		//response.sendRedirect("QueryBackServlet");
 	}
 
 	/**

@@ -61,48 +61,11 @@
   		</div>
 	</c:forEach>
 	<br>
-    <form action="FDServlet" method="post">
+    <form action="javascript:history.go(-1)" method="post">
     	<input style="height:30px;width:100px;font-size:18px;" type="submit" value="缩小"> <br>
     </form>
 	</span>
 </div>
-			<div class="div1">
-			<canvas id="myCanvas" width="1324" height="908"></canvas>
-			<script type="text/javascript">
-    			<%
-				List<Position> listPosition = (List<Position>)session.getAttribute("listPosition");
-    			%>
-    			alert("111");
-    			alert('<%=listPosition.size()%>');
-    			<%
-	            if(listPosition!=null)
-	            {
-	            	for(Position p:listPosition){
-	            		if(p.getPpv()>0.4||p.getPnv()>2||p.getPcod()>40)
-	            		{
-	            			%>
-	            			alert(<%p.getPx();%>)
-	                		var canvas = document.getElementById("myCanvas");
-	               			var context = canvas.getContext("2d");
-	                    	context.beginPath();
-	                        context.arc(<%p.getPx();%>,<%p.getPy();%>, 5, 0, 2 * Math.PI, true);
-	                        context.fillStyle = "#000000";
-	                    	context.fill();
-	                    	<%
-	            		}
-	            		else
-	            		{
-	            			%>alert("false");<%
-	            		}
-	            	}
-	            }
-	            else
-	            {
-	            	%>alert("false1");<%
-	            }
-			%>
-   			</script>
-			</div>
 <div class="div2">
 <img src="images/1.jpg" width="1324" height="908" border="0" />
 </div>

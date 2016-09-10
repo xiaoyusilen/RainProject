@@ -59,9 +59,19 @@
 				<td>${point.ryls }</td>
 				<td>${point.rtn }</td>
 				<td>${point.rtp }</td>
-				<td><a href="QueryPointServlet?pno=${point.pno }&&year=<%=year%>&&month=<%=month%>">修改</a>&nbsp;<a href="DeletePointServlet?pno=${point.pno }&&year=<%=year%>&&month=<%=month%>">删除</a></td>
+				<td><a href="QueryPointServlet?pno=${point.pno }&&year=<%=year%>&&month=<%=month%>">修改</a>&nbsp;<a href="DeletePointServlet?pno=${point.pno }&&year=<%=year%>&&month=<%=month%>" onclick="javascript:return p_del()">删除</a></td>
 				</tr>
 			</c:forEach>
 </table>
+	<script type="text/javascript">
+		function p_del() {
+			var msg = "确认删除";
+			if (confirm(msg) == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,19 @@ public class GetSXServlet extends HttpServlet {
 	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String year=request.getParameter("year");
 		String month=request.getParameter("month");
 		String type=request.getParameter("type");
@@ -50,54 +63,46 @@ public class GetSXServlet extends HttpServlet {
 			if(line1!=null)
 				LineList.add(line1);
 		}
-		System.out.println(LineList.size());
 		if(LineList.size()!=0)
 		{
-		ArrayList<Double> sxdata = new ArrayList();
-	    for(line line1:LineList)
-	    {
-	    	sxdata.add(line1.getData());
-	    }
-		request.getSession().setAttribute("Position",Position);
-		request.getSession().setAttribute("year", year);
-		request.getSession().setAttribute("month", month);
-		request.getSession().setAttribute("sxdata",sxdata);
-		String s1 ="总磷含量";
-		String s2 ="氨氮含量";
-		String s3 ="COD含量";
-		if(type.equals("pnv"))
-		{
-			request.getSession().setAttribute("type",s2 );
-			String s4 = year+"年"+month+"月氨氮含量折线图";
-			request.getSession().setAttribute("title", s4);
-		}
-		else if(type.equals("ppv"))
-		{
-			request.getSession().setAttribute("type",s1 );
-			String s4 = year+"年"+month+"月总磷含量折线图";
-			request.getSession().setAttribute("title", s4);
-		}
-		else if(type.equals("pcod"))
-		{
-			request.getSession().setAttribute("type",s3 );
-			String s4 = year+"年"+month+"月COD含量折线图";
-			request.getSession().setAttribute("title", s4);
-		}
-		response.sendRedirect("imagesx.jsp");
+			ArrayList<Double> sxdata = new ArrayList();
+			for(line line1:LineList)
+			{
+				sxdata.add(line1.getData());
+			}
+			request.getSession().setAttribute("Position",Position);
+			request.getSession().setAttribute("year", year);
+			request.getSession().setAttribute("month", month);
+			request.getSession().setAttribute("sxdata",sxdata);
+			String s1 ="总磷含量";
+			String s2 ="氨氮含量";
+			String s3 ="COD含量";
+			if(type.equals("pnv"))
+			{
+				request.getSession().setAttribute("type",s2 );
+				String s4 = year+"年"+month+"月氨氮含量折线图";
+				request.getSession().setAttribute("title", s4);
+			}
+			else if(type.equals("ppv"))
+			{
+				request.getSession().setAttribute("type",s1 );
+				String s4 = year+"年"+month+"月总磷含量折线图";
+				request.getSession().setAttribute("title", s4);
+			}
+			else if(type.equals("pcod"))
+			{
+				request.getSession().setAttribute("type",s3 );
+				String s4 = year+"年"+month+"月COD含量折线图";
+				request.getSession().setAttribute("title", s4);
+			}
+			response.sendRedirect("imagesx.jsp");
 		}
 		else
 		{
-			request.getSession().setAttribute("success", 1);
-			response.sendRedirect("choose.jsp");
+			//request.setAttribute("t", t);
+			out.print("<script>alert('没有数据');</script>");
+			out.print("<script>window.location.href=('choose.jsp?t="+t+"');</script>");
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

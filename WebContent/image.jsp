@@ -27,6 +27,9 @@
 		if(session.getAttribute("username")==null)
 			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
 %>
+<c:if test="${empty sessionScope.listPosition }">
+	<script>location.href="GetNewPositionServlet"</script>
+</c:if>
 <div class="div3">
 <span id="lbresult"> 
 <center><img src="images/5.png" width="728.2" height="499.4" usemap="#Map" border="0" /></center>
@@ -66,43 +69,6 @@
     </form>
 	</span>
 </div>
-			<div class="div1">
-			<canvas id="myCanvas" width="728.2" height="499.4"></canvas>
-			<script type="text/javascript">
-    			<%
-				List<Position> listPosition = (List<Position>)session.getAttribute("listPosition");
-    			%>
-    			alert("111");
-    			alert('<%=listPosition.size()%>');
-    			<%
-	            if(listPosition!=null)
-	            {
-	            	for(Position p:listPosition){
-	            		if(p.getPpv()>0.4||p.getPnv()>2||p.getPcod()>40)
-	            		{
-	            			%>
-	            			alert(<%p.getPx();%>)
-	                		var canvas = document.getElementById("myCanvas");
-	               			var context = canvas.getContext("2d");
-	                    	context.beginPath();
-	                        context.arc(<%p.getPx();%>,<%p.getPy();%>, 5, 0, 2 * Math.PI, true);
-	                        context.fillStyle = "#000000";
-	                    	context.fill();
-	                    	<%
-	            		}
-	            		else
-	            		{
-	            			%>alert("false");<%
-	            		}
-	            	}
-	            }
-	            else
-	            {
-	            	%>alert("false1");<%
-	            }
-			%>
-   			</script>
-			</div>
 <div class="div2">
 <img src="images/1.jpg" width="728.2" height="499.4" border="0" />
 </div>

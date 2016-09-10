@@ -33,7 +33,7 @@ public class FDServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8"); 
 		String year = (String)request.getSession().getAttribute("year");

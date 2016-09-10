@@ -35,14 +35,12 @@ public class QueryBackServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		PositionDao positiondao = new PositionDaoimpl();
 		HttpSession session = request.getSession(); 
 		String year = (String) session.getAttribute("year");
 		String month = (String) session.getAttribute("month");
-		System.out.println(year);
-		System.out.println(month);
 		List<Position> listChart = positiondao.selectAll(month, year);
 		if(listChart.size()>0)
 		{

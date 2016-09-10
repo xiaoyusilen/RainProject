@@ -35,14 +35,12 @@ public class GetNewPositionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		PositionDao positiondao = new PositionDaoimpl();
 		Time time = positiondao.querytime();
 		String year = time.getYear();
 		String month = time.getMonth();
-		System.out.println(year);
-		System.out.println(month);
 		List<Position> listPosition = positiondao.selectAll(month,year);
 		if (listPosition != null) {
 			request.getSession().setAttribute("listPosition", listPosition);

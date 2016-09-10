@@ -1,6 +1,8 @@
 package com.rain.Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +34,11 @@ public class UpdatePointServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); 
+		PrintWriter out = response.getWriter();
 		String year = (String)request.getSession().getAttribute("year");
 		String month = (String)request.getSession().getAttribute("month");
 		String pno = (String)request.getSession().getAttribute("pno");
@@ -53,10 +59,10 @@ public class UpdatePointServlet extends HttpServlet {
 		{
 			request.getSession().setAttribute("year", year);
 			request.getSession().setAttribute("month", month);
-			response.sendRedirect("QueryBackPointNewServlet");
+			out.print("<script>alert('修改成功');window.location.href=('QueryBackPointNewServlet');</script>");
 		}
 		else{
-			response.sendRedirect("GetNNewPointServlet");
+			out.print("<script>alert('修改失败');window.location.href=('GetNNewPointServlet');</script>");
 		}
 	}
 
