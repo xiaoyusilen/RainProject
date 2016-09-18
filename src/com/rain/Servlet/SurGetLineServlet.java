@@ -5,39 +5,26 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.rain.dao.LineDao;
 import com.rain.dao.impl.LineDaoimpl;
 import com.rain.entity.line;
 
-import net.sf.json.JSONArray;
-
-import org.jfree.chart.ChartFactory;  
-import org.jfree.chart.JFreeChart;  
-import org.jfree.chart.axis.CategoryAxis;  
-import org.jfree.chart.axis.NumberAxis;  
-import org.jfree.chart.axis.ValueAxis;  
-import org.jfree.chart.plot.CategoryPlot;  
-import org.jfree.chart.plot.PlotOrientation;  
-import org.jfree.chart.servlet.ServletUtilities;  
-import org.jfree.data.category.CategoryDataset;  
-import org.jfree.data.category.DefaultCategoryDataset;
-
 /**
- * Servlet implementation class GetLineServlet
+ * Servlet implementation class SurGetLineServlet
  */
-public class GetLineServlet extends HttpServlet implements Servlet {
+@WebServlet("/SurGetLineServlet")
+public class SurGetLineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetLineServlet() {
+    public SurGetLineServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -50,10 +37,10 @@ public class GetLineServlet extends HttpServlet implements Servlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String p = request.getParameter("pno");
 		int no = Integer.valueOf(p);
-		PrintWriter out = response.getWriter();
 		String type = request.getParameter("type");
 		LineDaoimpl linedao = new LineDaoimpl();
-		List<line> listLine = linedao.selectAll(no,type);
+		PrintWriter out = response.getWriter();
+		List<line> listLine = linedao.selectsurface(no, type);
 	    //设置返回时的编码格式
 	    response.setContentType("text/html; charset=utf-8");
 		ArrayList<Double> time = new ArrayList();
@@ -73,19 +60,19 @@ public class GetLineServlet extends HttpServlet implements Servlet {
 		String s1 ="总磷含量";
 		String s2 ="氨氮含量";
 		String s3 ="COD含量";
-		if(type.equals("pnv"))
+		if(type.equals("rnh"))
 		{
 			request.getSession().setAttribute("type",s2 );
 			String s4 ="第"+no+"位氨氮含量折线图";
 			request.getSession().setAttribute("title", s4);
 		}
-		else if(type.equals("ppv"))
+		else if(type.equals("rtp"))
 		{
 			request.getSession().setAttribute("type",s1 );
 			String s4 ="第"+no+"位总磷含量折线图";
 			request.getSession().setAttribute("title", s4);
 		}
-		else if(type.equals("pcod"))
+		else if(type.equals("rcod"))
 		{
 			request.getSession().setAttribute("type",s3 );
 			String s4 ="第"+no+"位COD含量折线图";
@@ -100,19 +87,7 @@ public class GetLineServlet extends HttpServlet implements Servlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		/*LineDaoimpl linedao = new LineDaoimpl();
-		List<line> listLine = linedao.selectAll();
-	    //设置返回时的编码格式
-	    response.setContentType("text/html; charset=utf-8");
-	    //调用JSONArray.fromObject方法把array中的对象转化为JSON格式的数组
-	    JSONArray array = JSONArray.fromObject(listLine);
-	    //System.out.println(array.toString());
-	    //返回给前端页面
-	    PrintWriter out = response.getWriter();  
-	    out.println(array);  
-	    out.flush();  
-	    out.close(); */
+		doGet(request, response);
 	}
 
 }

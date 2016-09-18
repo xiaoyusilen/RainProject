@@ -17,6 +17,52 @@ public class LineDaoimpl implements LineDao {
 	Connection connection = (Connection) connectionManager.openConnection();
 	SQLManager sqlManager = new SQLManager();
 	
+	public List<line> selectsurface(int pno,String type){
+		List<line> listLine = new ArrayList<line>();
+		
+		String strSQL = null;
+		if(type.equals("rtp"))
+		{
+			strSQL = "select rtp,year,month from pointrecord where pno=? group by month";
+		}
+		else if(type.equals("rnh"))
+		{
+			strSQL = "select rnh,year,month from pointrecord where pno=? group by month";
+		}
+		else if(type.equals("rcod"))
+		{
+			strSQL = "select rcod,year,month from pointrecord where pno=? group by month";
+		}
+		else if(type.equals("ryls"))
+		{
+			strSQL = "select ryls,year,month from pointrecord where pno=? group by month";
+		}
+		
+		Object[] params = {pno};
+		
+		ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
+		
+		
+		try {
+			while(rs.next())
+			{
+				line line1 = new line();
+				line1.setData(rs.getDouble(1));
+				line1.setYear(rs.getString(2));
+				line1.setMonth(rs.getString(3));
+				
+				listLine.add(line1);
+			}
+			return listLine;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}finally{
+			connectionManager.closeConnection(connection);
+		}
+	}
+	
 	public List<line> selectAll(int pno,String type) {
 		// TODO Auto-generated method stub
 		List<line> listLine = new ArrayList<line>();

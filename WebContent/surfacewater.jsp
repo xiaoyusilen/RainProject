@@ -28,6 +28,7 @@
 	</c:forEach>
   </map>
   <c:forEach items="${sessionScope.listPoint }" var="point">
+  <c:if test="${point.pno gt 12}">
 		<div class="${point.pcss2 }">
   		<img class="m2close" src="images/m2close.jpg" width="11" height="11" />
   		<div class="m2map_t">第${point.pno }点地表水位信息</div>
@@ -49,10 +50,49 @@
 			叶绿素a ${point.ryls }mg/m3<br/>
 			TN ${point.rtn }mg/L<br/>
 			TP ${point.rtp }mg/L<br/>	
+   			</li>  
+   			<li>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rcod" target="_self"><u>>>COD含量折线图<<</u></a><br/>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rnh" target="_self"><u>>>氨氮含量折线图<<</u></a><br/>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rtp" target="_self"><u>>>总磷含量折线图<<</u></a><br/>
    			</li>
  			</ul>
  		</div>
   		</div>
+  	</c:if>
+  	<c:if test="${point.pno le 12}">
+  		<div class="${point.pcss2 }">
+  		<img class="m2close" src="images/m2close.jpg" width="11" height="11" />
+  		<div class="m2map_t">第${point.pno }点地表水位信息</div>
+  		<div class="m2mapList">
+  			<ul>
+   			<li>
+   			<div class="m2map_t2"><strong class="fl cor_blue">${point.pname }</div>
+   			</li>
+   			<li>
+   			<div class="m2map_t2"><strong class="fl cor_blue">${point.year }年${point.month }月数据信息</div>		
+			pH ${point.rph }<br/>
+			氨氮 ${point.rnh }mg/L<br/>
+			高锰酸盐指数${point.rkm }mg/L<br/>
+			COD ${point.rcod }mg/L<br/>
+			DO ${point.rdo }mg/L<br/>
+			BOD5 ${point.rbod }mg/L<br/>
+			水温 ${point.rwt }℃<br/>
+			悬浮物 ${point.rxf }mg/L<br/>
+			叶绿素a ${point.ryls }mg/m3<br/>
+			TN ${point.rtn }mg/L<br/>
+			TP ${point.rtp }mg/L<br/>	
+   			</li>  
+   			<li>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rcod" target="_self"><u>>>COD含量折线图<<</u></a><br/>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rnh" target="_self"><u>>>氨氮含量折线图<<</u></a><br/>
+   			<a href="SurGetLineServlet?pno=${point.pno }&&type=rtp" target="_self"><u>>>总磷含量折线图<<</u></a><br/>
+   			<a href="ylsGetLineServlet?pno=${point.pno }&&type=rtp" target="_self"><u>>>叶绿素含量折线图<<</u></a><br/>
+   			</li>
+ 			</ul>
+ 		</div>
+  		</div>
+  	</c:if>
 	</c:forEach>
 	</span>
 
