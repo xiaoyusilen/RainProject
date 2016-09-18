@@ -41,7 +41,7 @@ public class QueryBackServlet extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		String year = (String) session.getAttribute("year");
 		String month = (String) session.getAttribute("month");
-		List<Position> listChart = positiondao.selectAll(month, year);
+		List<Position> listChart = positiondao.selectall(month, year);
 		if(listChart.size()>0)
 		{
 			request.getSession().setAttribute("listChart", listChart);

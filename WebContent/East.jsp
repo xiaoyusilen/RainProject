@@ -13,10 +13,12 @@
 %>
 <center><img src="images/East.png" border="0" usemap="#Map"></center>
 <map name="Map">
-	<area shape="polygon" coords="53,49,115,10,326,191,316,209" href="choose.jsp?t=e1" target="_self">
-	<area shape="polygon" coords="323,215,353,264,364,381,330,502,274,561,286,573,348,526,381,428,373,263,340,202" href="choose.jsp?t=e2" target="_self">
-	<area shape="polygon" coords="66,272,187,178,270,247,306,214,314,222,267,260,190,194,74,285" href="choose.jsp?t=e3" target="_self">
-	<area shape="polygon" coords="197,447,307,362,298,310,273,263,325,209,327,214,282,260,304,304,316,370,199,455" href="choose.jsp?t=e4" target="_self">
+	<area shape="polygon" coords="89,224,146,183,223,230,304,266,371,309,430,370,488,316,494,321,426,378,367,319,296,273,221,238,151,200,104,235" href="choose.jsp?t=e1" target="_self">
+	<area shape="polygon" coords="72,332,224,231,312,269,375,310,426,369,487,314,495,322,426,386,365,320,292,274,224,244,82,350" href="choose.jsp?t=e2" target="_self">
+	<area shape="polygon" coords="121,396,295,263,372,308,430,371,488,315,498,325,430,386,372,326,301,279,133,408" href="choose.jsp?t=e3" target="_self">
+	<area shape="polygon" coords="220,526,484,317,494,322,230,539" href="choose.jsp?t=e4" target="_self">
+	<area shape="polygon" coords="133,72,190,24,513,300,490,328,478,317,492,300,191,48,143,85" href="choose.jsp?t=e5" target="_self">
+	<area shape="polygon" coords="433,820,506,752,558,637,564,523,548,401,503,314,487,328,479,316,503,290,566,390,589,520,579,643,524,761,446,836" href="choose.jsp?t=e6" target="_self">
 </map>
 </body>
 </html>

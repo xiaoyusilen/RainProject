@@ -141,6 +141,36 @@ public class LineDaoimpl implements LineDao {
 		
 		String strSQL = null;
 		
+		if(year.equals("2016")&&(month.equals("1")||month.equals("4")||month.equals("7"))&&type.equals("ppv")&&pno>110){
+			strSQL="select pno,ppv,year,month from record where year=2016 and month=9 and pno=?";
+			Object[] params = {pno};
+			
+			ResultSet rs = sqlManager.execQuery(connection, strSQL, params);
+			try {
+				while(rs.next())
+				{
+					if(type.equals("ppv"))
+					{
+						line1 = new line(rs.getInt("pno"),rs.getDouble("ppv"),rs.getString("year"),rs.getString("month"));
+					}
+					else if(type.equals("pnv"))
+					{
+						line1 = new line(rs.getInt("pno"),rs.getDouble("pnv"),rs.getString("year"),rs.getString("month"));
+					}
+					else if(type.equals("pcod"))
+					{
+						line1 = new line(rs.getInt("pno"),rs.getDouble("pcod"),rs.getString("year"),rs.getString("month"));
+					}
+				}
+				return line1;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+			
+		}
+		
 		if(type.equals("ppv"))
 		{
 			strSQL="select pno,ppv,year,month from record where year=? and month=? and pno=?";

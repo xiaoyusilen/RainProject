@@ -43,7 +43,7 @@ public class GetChartServlet extends HttpServlet {
 		PositionDao positiondao = new PositionDaoimpl();
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
-		List<Position> listChart = positiondao.selectAll(month, year);
+		List<Position> listChart = positiondao.selectall(month, year);
 		if (listChart.size()>0) {
 			request.getSession().setAttribute("listChart", listChart);
 			request.getSession().setAttribute("year", year);

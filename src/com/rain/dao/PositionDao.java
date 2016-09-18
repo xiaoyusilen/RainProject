@@ -17,4 +17,5 @@ public interface PositionDao {
 	public int insert(Position position);
 	public int delete(String pno,String year,String month);
 	public int querybyId(String pno,String year,String month);
+	public List<Position> selectall(String month,String year);
 }
