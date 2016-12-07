@@ -69,7 +69,7 @@ public class QueryServlet extends HttpServlet {
 		}
 		else
 		{
-			out.print("<script>alert('没有数据');window.location.href=('query.jsp');</script>");
+			out.print("<script>alert('此月无监测计划');window.location.href=('query.jsp');</script>");
 			//response.sendRedirect("query.jsp");
 		}
 		

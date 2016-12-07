@@ -51,7 +51,7 @@ public class GetPointServlet extends HttpServlet {
 		}
 		else
 		{
-			out.print("<script language='javascript'>alert('没有数据！');window.location.href='GetNewPointServlet';</script>");
+			out.print("<script language='javascript'>alert('此月无监测计划');window.location.href='GetNewPointServlet';</script>");
 			//response.sendRedirect("GetNewPointServlet");
 		}
 	}

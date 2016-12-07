@@ -57,7 +57,7 @@ public class GetNewPointChartServlet extends HttpServlet {
 		}
 		else
 		{
-			out.print("<script type='text/javascript'>alert('没有数据！');window.location.href='GetNNewPointServlet';</script>");
+			out.print("<script type='text/javascript'>alert('此月无监测计划');window.location.href='GetNNewPointServlet';</script>");
 		}
 	}
 

@@ -100,7 +100,7 @@ public class GetSXServlet extends HttpServlet {
 		else
 		{
 			//request.setAttribute("t", t);
-			out.print("<script>alert('没有数据');</script>");
+			out.print("<script>alert('此月无监测计划');</script>");
 			out.print("<script>window.location.href=('choose.jsp?t="+t+"');</script>");
 		}
 	}
