@@ -23,19 +23,19 @@ public class LineDaoimpl implements LineDao {
 		String strSQL = null;
 		if(type.equals("rtp"))
 		{
-			strSQL = "select rtp,year,month from pointrecord where pno=? group by month";
+			strSQL = "select rtp,year,month from pointrecord where pno=? group by year,month";
 		}
 		else if(type.equals("rnh"))
 		{
-			strSQL = "select rnh,year,month from pointrecord where pno=? group by month";
+			strSQL = "select rnh,year,month from pointrecord where pno=? group by year,month";
 		}
 		else if(type.equals("rcod"))
 		{
-			strSQL = "select rcod,year,month from pointrecord where pno=? group by month";
+			strSQL = "select rcod,year,month from pointrecord where pno=? group by year,month";
 		}
 		else if(type.equals("ryls"))
 		{
-			strSQL = "select ryls,year,month from pointrecord where pno=? group by month";
+			strSQL = "select ryls,year,month from pointrecord where pno=? group by year,month";
 		}
 		
 		Object[] params = {pno};
@@ -70,15 +70,15 @@ public class LineDaoimpl implements LineDao {
 		String strSQL = null;
 		if(type.equals("ppv"))
 		{
-			strSQL = "select ppv,year,month from record where pno=? group by month";
+			strSQL = "select ppv,year,month from record where pno=? group by year,month";
 		}
 		else if(type.equals("pnv"))
 		{
-			strSQL = "select pnv,year,month from record where pno=? group by month";
+			strSQL = "select pnv,year,month from record where pno=? group by year,month";
 		}
 		else if(type.equals("pcod"))
 		{
-			strSQL = "select pcod,year,month from record where pno=? group by month";
+			strSQL = "select pcod,year,month from record where pno=? group by year,month";
 		}
 		
 		Object[] params = {pno};
