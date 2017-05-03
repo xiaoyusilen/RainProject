@@ -1,3 +1,8 @@
 /build/
 .idea/
 *.iml
+/src/com/rain/DateSource/
+/WebContent/css/
+/WebContent/echartjs/
+/WebContent/images/
+/WebContent/js/

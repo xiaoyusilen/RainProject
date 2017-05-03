@@ -14,7 +14,6 @@
 		if(session.getAttribute("username")==null)
 			out.println("<script>alert('未登录，请登录！');top.location.href='index.jsp'</script>");
 %>
-<!-- 为ECharts准备一个具备大小（宽高）的Dom 基于准备好的dom，初始化echarts实例-->
     <div id="main" style="width: 700px;height:500px;"></div>
      <script type="text/javascript">
     	var data = [];
