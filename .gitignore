@@ -6,3 +6,6 @@
 /WebContent/echartjs/
 /WebContent/images/
 /WebContent/js/
+.project
+.classpath
+.settings
